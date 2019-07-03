@@ -1,0 +1,332 @@
+{
+  "_index": "order",
+  "_type": "shippingorder",
+  "_id": "5826f0205ba259f449e4f78f",
+  "_score": null,
+  "_source": {
+    "_id": "5826f0205ba259f449e4f78f",
+    "createdBy": "58098f047de85ebdc12ad6ba",
+    "createdOn": "2016-11-12T10:34:08.521Z",
+    "no": "DH161112003261",
+    "manifest": {
+      "_id": "5826f0205ba259f449e4f789",
+      "externalOrderId": "",
+      "selectDeliver": "58098ed27de85ebdc12a265b",
+      "out_platform": 2,
+      "typeName": "ManualManifest",
+      "smId": 0,
+      "directShipment": 1,
+      "items": [
+        {
+          "createdOn": "2016-11-12T10:34:08.510Z",
+          "supplier": "步履鞋业",
+          "phone": "18358639359",
+          "address": "金施村B区167号",
+          "articleNo": "步履鞋业&B370",
+          "outerId": "",
+          "externalId": "",
+          "skuId": "",
+          "title": "",
+          "picUrl": "http://2mm.i.ximgs.net/2/1064612/20160913/20160913193746243001_220.jpg",
+          "amount": 1,
+          "skuProperties": "颜色分类:黑色;尺码:36",
+          "refundStatus": "",
+          "totalFee": 0,
+          "typeName": "ManifestItem",
+          "supplierId": "58098ed27de85ebdc12a265b",
+          "item": "58099bdb7de85ebdc12f839e",
+          "_id": "5826f0205ba259f449e4f78b",
+          "_monitors": [
+            
+          ],
+          "_states": [
+            {
+              "state": "Active",
+              "_id": "5826f0205ba259f449e4f78c"
+            }
+          ],
+          "roles": [
+            
+          ],
+          "pricing": {
+            "actual": 1,
+            "external": 0
+          },
+          "id": "5826f0205ba259f449e4f78b"
+        }
+      ],
+      "receivers": [
+        {
+          "name": "发放",
+          "phone": "12131454648",
+          "mobile": "12131454648",
+          "_id": "5826f0205ba259f449e4f78d",
+          "address": {
+            "country": "",
+            "state": "",
+            "city": "",
+            "district": "",
+            "town": "",
+            "address": "阿弗东风科技和空间",
+            "zip": null
+          }
+        }
+      ],
+      "buyer": {
+        "nick": "",
+        "message": ""
+      },
+      "id": "5826f0205ba259f449e4f789"
+    },
+    "provider": {
+      "_id": "58098ed27de85ebdc12a265b",
+      "username": "2mm_步履",
+      "profile": "58098fbe7de85ebdc12b157b",
+      "phones": {
+        "bind": false,
+        "mobile": "18358639359"
+      },
+      "id": "58098ed27de85ebdc12a265b",
+      "provider": {
+        "_id": "58098fbe7de85ebdc12b157b",
+        "provider": {
+          "dropShipping": {
+            "consigners": [
+              
+            ]
+          }
+        },
+        "supplier": {
+          "title": "步履鞋业",
+          "brand": "步履鞋业",
+          "certified_type": 1,
+          "membership_type": 0,
+          "membership": [
+            
+          ],
+          "plates": [
+            
+          ],
+          "addresses": {
+            "stall": "金施村B区167号"
+          }
+        },
+        "id": "58098fbe7de85ebdc12b157b"
+      }
+    },
+    "expressCompany": {
+      "_id": "55acbe96252b3783f6829f6e",
+      "print": [
+        {
+          "_id": "55f9e9747ee66d4919cd0747",
+          "name": "圆通速递",
+          "image": "1bf572c2-786d-45d9-944d-c405d4503696.jpg",
+          "width": 230,
+          "height": 127,
+          "items": [
+            {
+              "name": "senderName",
+              "left": 208,
+              "top": 384,
+              "width": 104,
+              "height": 25,
+              "fontbold": "0",
+              "fontSize": 12,
+              "fontName": "simsun",
+              "visible": true
+            },
+            {
+              "name": "nick",
+              "left": 112,
+              "top": 102,
+              "width": 104,
+              "height": 25,
+              "fontbold": "0",
+              "fontSize": 12,
+              "fontName": "simsun",
+              "visible": true
+            },
+            {
+              "name": "senderTel",
+              "left": 144,
+              "top": 218,
+              "width": 120,
+              "height": 25,
+              "fontbold": "0",
+              "fontSize": 12,
+              "fontName": "simsun",
+              "visible": true
+            },
+            {
+              "name": "senderAddress",
+              "left": 100,
+              "top": 157,
+              "width": 290,
+              "height": 60,
+              "fontbold": "0",
+              "fontSize": 12,
+              "fontName": "simsun",
+              "visible": true
+            },
+            {
+              "name": "senderCity",
+              "left": 255,
+              "top": 102,
+              "width": 136,
+              "height": 25,
+              "fontbold": "0",
+              "fontSize": 12,
+              "fontName": "simsun",
+              "visible": true
+            },
+            {
+              "name": "receiverName",
+              "left": 470,
+              "top": 104,
+              "width": 102,
+              "height": 24,
+              "fontbold": "0",
+              "fontSize": 12,
+              "fontName": "simsun",
+              "visible": true
+            },
+            {
+              "name": "receiverTel",
+              "left": 500,
+              "top": 220,
+              "width": 120,
+              "height": 25,
+              "fontbold": "0",
+              "fontSize": 12,
+              "fontName": "simsun",
+              "visible": true
+            },
+            {
+              "name": "senderMobile",
+              "left": 270,
+              "top": 218,
+              "width": 101,
+              "height": 27,
+              "fontbold": "0",
+              "fontSize": 12,
+              "fontName": "simsun",
+              "visible": true
+            },
+            {
+              "name": "receiverAddress",
+              "left": 455,
+              "top": 160,
+              "width": 309,
+              "height": 56,
+              "fontbold": "0",
+              "fontSize": 12,
+              "fontName": "simsun",
+              "visible": true
+            },
+            {
+              "name": "printDate",
+              "left": 316,
+              "top": 384,
+              "width": 120,
+              "height": 25,
+              "fontbold": "0",
+              "fontSize": 12,
+              "fontName": "simsun",
+              "visible": true
+            }
+          ],
+          "default": false,
+          "independent": false
+        }
+      ],
+      "hotLine": [
+        
+      ],
+      "name": {
+        "cn": "圆通速递"
+      },
+      "id": "55acbe96252b3783f6829f6e"
+    },
+    "remarks": "",
+    "providerMark": "",
+    "out_platform": 2,
+    "_states": [
+      {
+        "enteredOn": "2016-11-12T10:34:56.265Z",
+        "state": "Accepted",
+        "msp": "ShippingOrderProcess0.3",
+        "_id": "5826f0205ba259f449e4f790"
+      }
+    ],
+    "isDirectShip": 1,
+    "deleteType": 0,
+    "refundInfo": {
+      "state": 0,
+      "hasRefund": false
+    },
+    "isSyncDeliver": false,
+    "printed": false,
+    "fee": {
+      "gifts": 0,
+      "express": 6,
+      "serviceCharge": 2,
+      "payment": 1,
+      "payType": "OnLine",
+      "payWay": "Alipay",
+      "hasGotFee": false,
+      "inspection": 0,
+      "giftInfo": [
+        
+      ]
+    },
+    "express": [
+      null
+    ],
+    "returns": [
+      
+    ],
+    "items": [
+      "5826f0205ba259f449e4f78b"
+    ],
+    "id": "5826f0205ba259f449e4f78f",
+    "lastFee": {
+      "gifts": 0,
+      "express": 6,
+      "serviceCharge": 2,
+      "payment": 1,
+      "payType": "OnLine",
+      "payWay": "Alipay",
+      "hasGotFee": false,
+      "inspection": 0,
+      "giftInfo": [
+        
+      ]
+    },
+    "supplementTotal": 0,
+    "purchaser": {
+      "_id": "58098f047de85ebdc12ad6ba",
+      "username": "tb814593575",
+      "profile": "58098ffa7de85ebdc12bc027",
+      "phones": {
+        "bind": false,
+        "mobile": "15257136990"
+      },
+      "basic": {
+        "name": "陶伟星",
+        "qq": "814593575"
+      },
+      "id": "58098f047de85ebdc12ad6ba"
+    },
+    "supplement": [
+      
+    ],
+    "refund": [
+      
+    ]
+  },
+  "sort": [
+    1478946848521
+  ]
+}
+]
+}
