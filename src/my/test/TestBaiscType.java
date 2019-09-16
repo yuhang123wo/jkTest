@@ -19,7 +19,7 @@ public class TestBaiscType {
 	}
 	
 	public void name() {
-		System.out.println(1);
+		System.out.println(12);
 	}
 	
 	public void tt(){
