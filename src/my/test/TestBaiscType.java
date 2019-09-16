@@ -21,4 +21,8 @@ public class TestBaiscType {
 	public void name() {
 		System.out.println(1);
 	}
+	
+	public void tt(){
+		System.out.println(123);
+	}
 }
