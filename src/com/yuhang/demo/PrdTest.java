@@ -2,11 +2,12 @@ package com.yuhang.demo;
 
 
 public class PrdTest {
-	 public static String api = "http://127.0.0.1:36061/";
+//	 public static String api = "http://127.0.0.1:36061/";
 	//
-//	public static String api = "https://prdapi.go2b2b.com/";
-//	public static String api = "xxxhttps://prdapi.gsb68.com/";
-	public static String token = "/MFu9MD4uvAQuPb3idJAQDtC3O1nyljRvDBgCQkvenht9Xwqw5nxG0+L2+FO+NVm";
+	public static String api = "https://prdapi.go2b2b.com/";
+//	public static String api = "https://prdapi.gsb68.com/";
+//	public static String token ="4epI970Z6U1+jdhqjmCYxxEjuL743l0a+6sVzbPHe5moWrZyHBqcD6+trFy6sSu/";
+	public static String token ="Vq7uK2vgruMEY9wU6lEo29cOXRaKsckOYMXRC1dI4Op9VSjnI3TRPjwGY30LBaU0";
 
 	public static void main(String[] args) throws Exception {
 //		String result = PrdAutoTest.createDrpProduct();
@@ -16,6 +17,7 @@ public class PrdTest {
 //		String result = PrdAutoTest.updateProductInfo();
 //		String result = PrdAutoTest.customerList();
 //		String result = PrdAutoTest.getDetailCustomer();
+//		String result = PrdAutoTest.getPercentage();
 //		String result = PrdAutoTest.saleOrderList();
 //		String result = PrdAutoTest.transactionList();
 //		String result = PrdAutoTest.hasSet();
@@ -72,11 +74,17 @@ public class PrdTest {
 //		String result = PrdAutoTest.addPrd();
 //		String result = PrdAutoTest.completeOrderBatch();
 //		String result = PrdAutoTest.getProfit();
-//        String result = PrdAutoTest.listProfit();
-//        String result = PrdAutoTest.getRewardAndProfit();
+//      String result = PrdAutoTest.listProfit();
+//      String result = PrdAutoTest.getRewardAndProfit();
 //		String result = PrdAutoTest.listReward();
 //		String result = PrdAutoTest.refundOrder();
+//		String result = PrdAutoTest.drphotProductList();
 //		String result = PrdAutoTest.saleOrderDetail();
+//		String result = PrdAutoTest.batchDelProduct();
+//		String result = PrdAutoTest.prdProductQuery();
+//		String result = PrdAutoTest.drplistRewardNews();
+//		String result = PrdAutoTest.getPrdInfoByPrdId();
+//		String result = PrdAutoTest.customerList();
 		//微信小程序
 //		String result = PrdAutoTest.createOrder();
 //		String result = PrdAutoTest.xcudeposit();
@@ -107,21 +115,24 @@ public class PrdTest {
 //		String result = PrdAutoTest.listRewardNews();
 //		String result = PrdAutoTest.listWaitReward();
 //		String result = PrdAutoTest.xcuCustomerList();
+//		String result = PrdAutoTest.WxgetAccountInfo();
 //		String result = PrdAutoTest.hotProductList();
 //		String result = PrdAutoTest.getProductFromOrder();
 //		String result = PrdAutoTest.getRewardData();
 //		String result = PrdAutoTest.collectList(); 
 //		String result = PrdAutoTest.getRewardDetail();
-		
+//		String result = PrdAutoTest.wxwithdrawApply();
+//		String result = PrdAutoTest.getUsPrdList();
 		//运营后台
 //		String result = PrdAutoTest.productDetail();
-		String result = PrdAutoTest.bsProductList();
+//		String result = PrdAutoTest.bsProductList();
 //		String result = PrdAutoTest.prdCustomerList(); 
 //		String result = PrdAutoTest.listPrd();
 //		String result = PrdAutoTest.setRecommend();
 //		String result = PrdAutoTest.productListBack();
-//		String result = PrdAutoTest.cutomerlist();
+		String result = PrdAutoTest.cutomerlist();
 //		String result = PrdAutoTest.updateProductInfoBack();
+//		String result = PrdAutoTest.productDown();
 		System.out.println(result);
 		
 	}

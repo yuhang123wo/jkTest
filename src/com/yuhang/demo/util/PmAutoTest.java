@@ -23,7 +23,7 @@ public class PmAutoTest {
 	public static String byOutId() throws IOException {
 		String url = PmTest.api + "/user/byOutId";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("outId", "1184935"));
+		formparams.add(new BasicNameValuePair("outId", "507612"));
 		return PostUtil.httpPost(url, formparams);
 	}
 
@@ -101,10 +101,11 @@ public class PmAutoTest {
 
 	public static String createOrder() throws IOException {
 		String url = PmTest.api + "/2b/df/order/createOrder";
-		String json = "[ { \"sourceType\":\"JD\",\"collect\":1,\"remark\": \"订单备注测试\", \"receivers\":{ \"name\": \"杨杰\", \"phone\": \"15828006658\", \"mobile\": \"15922551329\", \"address\": { \"province\": \"重庆\", \"city\": \"重庆\", \"country\": \"渝北区\", \"address\": \"重庆重庆渝北区光电园水星\" } }, \"dsId\": 97, \"items\": [ { \"supplierId\": 97, \"supplier\": \"D区88号\", \"phone\": \"18523502645\", \"address\": \"国际商贸城3区2楼14街22505号\", \"artNo\": \"创意·雨燕&c205\", \"itemId\": 1, \"skuId\": 12, \"title\": \"商品title\", \"picUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"price\": 1, \"num\": 2, \"amount\": 2, \"color\": \"白色\", \"size\": \"EUR26\" } ], \"fee\": { \"giftInfo\": [ { \"id\": 1, \"price\": 0.5, \"num\": 1, \"imgUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"remark\": \"后跟帖\" }, { \"id\": 2, \"price\": 1, \"num\": 2, \"imgUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"remark\": \"丝袜\" } ], \"gifts\": 2.5, \"express\": 25, \"inspection\": 0, \"serviceCharge\": 2, \"payment\":3 }, \"expressId\": 1, \"expressName\": \"中通快递\", \"expressNo\": \"中通快递\" } ]";
+//		String json = "[ { \"sourceType\":\"JD\",\"collect\":1,\"remark\": \"订单备注测试\", \"receivers\":{ \"name\": \"杨杰\", \"phone\": \"15828006658\", \"mobile\": \"15922551329\", \"address\": { \"province\": \"重庆\", \"city\": \"重庆\", \"country\": \"渝北区\", \"address\": \"重庆重庆渝北区光电园水星\" } }, \"dsId\": 464671, \"items\": [ { \"supplierId\": 97, \"supplier\": \"D区88号\", \"phone\": \"18523502645\", \"address\": \"国际商贸城3区2楼14街22505号\", \"artNo\": \"创意·雨燕&A13\", \"itemId\": 696570, \"skuId\": 12, \"title\": \"商品title\", \"picUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"price\": 45, \"num\": 2, \"amount\": 90, \"color\": \"白色\", \"size\": \"EUR26\" } ], \"fee\": { \"giftInfo\": [ { \"id\": 1, \"price\": 0.5, \"num\": 1, \"imgUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"remark\": \"后跟帖\" }, { \"id\": 2, \"price\": 1, \"num\": 2, \"imgUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"remark\": \"丝袜\" } ], \"gifts\": 2.5, \"express\": 25, \"inspection\": 0, \"serviceCharge\": 2, \"payment\":3 }, \"expressId\": 1, \"expressName\": \"中通快递\", \"expressNo\": \"中通快递\" } ]";
+		String json = "[ { \"sourceType\":\"JD\",\"collect\":1,\"remark\": \"订单备注测试\", \"receivers\":{ \"name\": \"杨杰\", \"phone\": \"15828006658\", \"mobile\": \"15922551329\", \"address\": { \"province\": \"重庆\", \"city\": \"重庆\", \"country\": \"渝北区\", \"address\": \"重庆重庆渝北区光电园水星\" } }, \"dsId\": 97, \"items\": [ { \"supplierId\": 97, \"supplier\": \"D区88号\", \"phone\": \"18523502645\", \"address\": \"国际商贸城3区2楼14街22505号\", \"artNo\": \"创意·雨燕&A13\", \"itemId\": 696570, \"skuId\": 12, \"title\": \"商品title\", \"picUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"price\": 45, \"num\": 2, \"amount\": 90, \"color\": \"白色\", \"size\": \"EUR26\" },{ \"supplierId\": 97, \"supplier\": \"D区88号\", \"phone\": \"18523502645\", \"address\": \"国际商贸城3区2楼14街22505号\", \"artNo\": \"创意·雨燕&A11\", \"itemId\": 16413437, \"skuId\": 0, \"title\": \"商品title\", \"picUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"price\": 45, \"num\": 2, \"amount\": 90, \"color\": \"白色\", \"size\": \"35\" } ], \"fee\": {\"gifts\": 0.0, \"express\": 25, \"inspection\": 0, \"serviceCharge\": 2, \"payment\":3 }, \"expressId\": 1, \"expressName\": \"中国邮政平邮\", \"expressNo\": \"\" } ]";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("json", json));
-		formparams.add(new BasicNameValuePair("userId", "1"));
+		formparams.add(new BasicNameValuePair("userId", "55934"));
 		formparams.add(new BasicNameValuePair("outPlatform", "1"));
 		return PostUtil.httpPost(url, formparams);
 	}
@@ -141,13 +142,37 @@ public class PmAutoTest {
 	public static String queryItemByParams() throws IOException {
 		String url = PmTest.api + "/gi/queryItemByParams";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("artNo", "雅蒂尔&D110"));
+		formparams.add(new BasicNameValuePair("artNo", "米莱哆&MM618"));
 		// formparams.add(new BasicNameValuePair("sourcePlace", "1"));
 		// formparams.add(new BasicNameValuePair("outPlatform", "2"));
 		// formparams.add(new BasicNameValuePair("supplierId", "97"));
 
 		return PostUtil.httpPost(url, formparams);
 	}
+	public static String querySkuByColorSize() throws IOException {
+		String url = PmTest.api + "/gi/querySkuByColorSize";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("itemId", "45407693"));
+		formparams.add(new BasicNameValuePair("color", "红色"));
+		 formparams.add(new BasicNameValuePair("size", "130"));
+		// formparams.add(new BasicNameValuePair("outPlatform", "2"));
+		// formparams.add(new BasicNameValuePair("supplierId", "97"));
+
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	
+	
+	
+	public static String loadSingleGsbItem() throws IOException {
+		String url = PmTest.api + "/gi/loadSingleGsbItem";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("itemId", "23508444"));
+
+		return PostUtil.httpPost(url, formparams);
+	}
+	
 
 	public static String loadDsOrSupplierInfo() throws IOException {
 		String url = PmTest.api + "/2b/df/order/loadDsOrSupplierInfo";
@@ -265,14 +290,13 @@ public class PmAutoTest {
 		String url = PmTest.api + "/pay/orderPay";
 		OrderPayDto dto = new OrderPayDto();
 		dto.setPwd("123456");
-		dto.setType(PayType.ALIPAY);
-		dto.setUserId(120240L);
-		dto.setAmount("165");
+		dto.setType(PayType.BALANCE);
+		dto.setUserId(55934L);
+		dto.setAmount("62.99");
 		List<Long> list = new ArrayList<Long>();
-		list.add(25083L);
-		list.add(25082L);
+		list.add(4263777L);
 		dto.setOrders(list);
-		dto.setRate("0.005");
+		dto.setRate("0");
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("json", JSON.toJSONString(dto)));
 		return PostUtil.httpPost(url, formparams);
@@ -350,12 +374,12 @@ public class PmAutoTest {
 	public static String receiveApply() throws IOException {
 		String url = PmTest.api + "/trade/transfer/receive/apply";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("userId", "97"));// 55934
+		formparams.add(new BasicNameValuePair("userId", "55934"));// 55934
 		formparams.add(new BasicNameValuePair("pwd", ""));
 		formparams.add(new BasicNameValuePair("transferId", ""));
 		formparams.add(new BasicNameValuePair("fee", "0.01"));
-		formparams.add(new BasicNameValuePair("fromId", "120240"));
-		formparams.add(new BasicNameValuePair("toId", "97"));
+		formparams.add(new BasicNameValuePair("fromId", "464671"));
+		formparams.add(new BasicNameValuePair("toId", "55934"));
 		formparams.add(new BasicNameValuePair("comments", "我要收款我要收款测试"));
 		// formparams.add(new BasicNameValuePair("orders", "25711"));
 		return PostUtil.httpPost(url, formparams);
@@ -372,14 +396,14 @@ public class PmAutoTest {
 	public static String transferPay() throws IOException {
 		String url = PmTest.api + "/trade/transfer/pay";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("userId", "556248"));
-		formparams.add(new BasicNameValuePair("transferId", "2"));
+		formparams.add(new BasicNameValuePair("userId", "464671"));
+//		formparams.add(new BasicNameValuePair("transferId", "2"));
 		formparams.add(new BasicNameValuePair("pwd", "123456"));
 		formparams.add(new BasicNameValuePair("payType", "BALANCE"));// BALANCE
 																		// ALIPAY
 		formparams.add(new BasicNameValuePair("fee", "1"));
-		formparams.add(new BasicNameValuePair("fromId", "556248"));
-		formparams.add(new BasicNameValuePair("toId", "556257"));
+		formparams.add(new BasicNameValuePair("fromId", "464671"));
+		formparams.add(new BasicNameValuePair("toId", "55934"));
 		formparams.add(new BasicNameValuePair("comments", "777"));
 		// formparams.add(new BasicNameValuePair("orders", "257250"));
 		return PostUtil.httpPost(url, formparams);
@@ -402,10 +426,16 @@ public class PmAutoTest {
 	public static String withdrawApply() throws IOException {
 		String url = PmTest.api + "/trade/withdraw/apply";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("userId", "556257"));
-		formparams.add(new BasicNameValuePair("supplierId", "556248"));
+		formparams.add(new BasicNameValuePair("userId", "464671"));
 		formparams.add(new BasicNameValuePair("amount", "1"));
 		formparams.add(new BasicNameValuePair("pwd", "123456"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String getPrdFrozen() throws IOException {
+		String url = PmTest.api + "/trade/getPrdFrozen";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "461790"));
 		return PostUtil.httpPost(url, formparams);
 	}
 
@@ -1084,6 +1114,299 @@ public class PmAutoTest {
 		String url = PmTest.api + "/aiku/getActivityNameByOrderId";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("orderId", "4217309"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	
+	public static String returnOrder() throws IOException {
+		String url = PmTest.api + "/2b/df/order/returnOrder";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "55934"));
+		formparams.add(new BasicNameValuePair("orderId", "4263750"));
+		formparams.add(new BasicNameValuePair("itemIds", "4864297"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String cancelWaiforsendOrder() throws IOException {
+		String url = PmTest.api + "/1b/order/cancelWaiforsendOrder";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("orderIds", "4263915"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String getOrderRefundMaps() throws IOException {
+		String url = PmTest.api + "/2b/df/order/getOrderRefundMaps";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "1"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String detailOrder() throws IOException {
+		String url = PmTest.api + "/2b/df/order/detail";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "55934"));
+		formparams.add(new BasicNameValuePair("orderId", "4263941"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	
+
+	
+	public static String updateAppeal() throws IOException {
+		String url = PmTest.api + "/1b/appeal/deal/updateAppeal";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("appealId", "293"));
+		formparams.add(new BasicNameValuePair("remark", "4263404"));
+		formparams.add(new BasicNameValuePair("dsId", "4864297"));
+		return PostUtil.httpPost(url, formparams);
+	}
+
+	
+	public static String updateRefundSign() throws IOException {
+		String url = PmTest.api + "/1b/refund/updateRefundSign";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("refundId", "680"));
+		formparams.add(new BasicNameValuePair("signStatus", "1"));
+		formparams.add(new BasicNameValuePair("reason", "ffffff"));
+		formparams.add(new BasicNameValuePair("img", "[\"df/sg/516b9f3c-8979-4caf-a555-acd1795cfaf8.jpg\"]"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String getStoreIndex() throws IOException {
+		String url = PmTest.api + "/1b/take/getStoreIndex";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("supplierId", "8"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String updateRefundRefuse() throws IOException {
+		String url = PmTest.api + "/1b/refund/updateRefundRefuse";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("refundId", "700"));
+		formparams.add(new BasicNameValuePair("reason", "xxxxxx"));
+//		formparams.add(new BasicNameValuePair("img", "http://www.baidu.com/dfjkadf/fdaskjfasdf"));
+//		formparams.add(new BasicNameValuePair("img", "http://www.baidu.com/dfjkadf/fdaskjfasdf"));
+//		formparams.add(new BasicNameValuePair("img", "http://www.baidu.com/dfjkadf/fdaskjfasdf"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String refundListvib() throws IOException {
+		String url = PmTest.api + "/2b/df/order/refundList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("purchaserId", "55934"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	
+	public static String loginApp1b() throws IOException {
+		String url = PmTest.api + "/wap/login";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("username", "nahuoyuan001"));
+		formparams.add(new BasicNameValuePair("password", "123456"));
+		return PostUtil.httpPost(url, formparams);
+	}
+
+	
+	public static String option(String token) throws IOException {
+		String url = PmTest.api + "/wap/platform/option";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "621327"));
+		formparams.add(new BasicNameValuePair("token", token));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String index(String token) throws IOException {
+		String url = PmTest.api + "/wap/platform/index";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "621327"));
+		formparams.add(new BasicNameValuePair("token", token));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String taked(String token) throws IOException {
+		String url = PmTest.api + "/wap/platform/orderTaked";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "621327"));
+		formparams.add(new BasicNameValuePair("takeIds", "3115"));
+		formparams.add(new BasicNameValuePair("token", token));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String orderStockOut(String token) throws IOException {
+		String url = PmTest.api + "/wap/platform/orderStockOut";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "621327"));
+		formparams.add(new BasicNameValuePair("takeIds", "3116"));
+		formparams.add(new BasicNameValuePair("token", token));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String transactionRelation() throws IOException {
+		String url = PmTest.api + "/trade/transaction/relation";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "464671"));
+		formparams.add(new BasicNameValuePair("tId", "40484"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String sellListPlatform() throws IOException {
+		String url = PmTest.api + "/1b/take/sellListPlatform";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("supplierId", "97"));
+//		formparams.add(new BasicNameValuePair("endTime", "2019-08-28"));
+		formparams.add(new BasicNameValuePair("pageSize", "10"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String advanceList() throws IOException {
+		String url = PmTest.api + "/1b/take/advanceList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("supplierId", "97"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String appAdvanceList() throws IOException {
+		String url = PmTest.api + "/1b/take/appAdvanceList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("supplierId", "97"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String getSalesTake() throws IOException {
+		String url = PmTest.api + "/1b/take/getSalesTake";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("supplierId", "8"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String getTakeTracByOrderId() throws IOException {
+		String url = PmTest.api + "/common/getTakeTracByOrderId";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("orderId", "4263797"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String submitAppeal() throws IOException {
+		String url = PmTest.api + "/2b/appeal/submitAppeal";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "226207"));
+		formparams.add(new BasicNameValuePair("content", "拿货超时了"));
+		formparams.add(new BasicNameValuePair("type", "1"));
+		formparams.add(new BasicNameValuePair("orderId", "4263842"));
+		return PostUtil.httpPostWz(url, formparams);
+	}
+	
+	
+	public static String stockOutList() throws IOException {
+		String url = PmTest.api + "/1b/take/stockOutList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("supplierId", "97"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String refundItemList() throws IOException {
+		String url = PmTest.api + "/1b/refund/refundItemList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("supplierId", "97"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String getTransferLimit() throws IOException {
+		String url = PmTest.api + "/trade/getTransferLimit";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("fromId", "97"));
+		formparams.add(new BasicNameValuePair("toId", "55934"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String appStockOutList() throws IOException {
+		String url = PmTest.api + "/1b/take/appStockOutListNew";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("supplierId", "97"));
+		formparams.add(new BasicNameValuePair("state", "TAKED"));
+		formparams.add(new BasicNameValuePair("pageSize", "1"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String appStoreListNew() throws IOException {
+		String url = PmTest.api + "/1b/take/appStoreListNew";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("supplierId", "97"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String getTodayStoreIndex() throws IOException {
+		String url = PmTest.api + "/1b/take/getTodayStoreIndex";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("supplierId", "97"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String appStoreList() throws IOException {
+		String url = PmTest.api + "/1b/take/appStoreList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("supplierId", "97"));
+		formparams.add(new BasicNameValuePair("type", "0"));
+		formparams.add(new BasicNameValuePair("pageSize", "10"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String getRefundingReach() throws IOException {
+		String url = PmTest.api + "/1b/order/getRefundingReach";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String getUserByOutId() throws IOException {
+		String url = PmTest.api + "/user/getUserByOutId";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("outId", "265"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String getpreBalance() throws Exception {
+		String url = PmTest.api + "/cd/user/getpreBalance";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "265"));
+		Map<String, Object> params = new HashMap<String, Object>();
+		String time = new Date().getTime() + "";
+		params.put("userId", "265");
+		params.put("timestamp", time);
+		SignUtil util = new SignUtil();
+		util.sign(params, "UTF-8");
+		formparams.add(new BasicNameValuePair("timestamp", time));
+		formparams.add(new BasicNameValuePair("sign", util.sign(params, "UTF-8")));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
+	public static String getprXeBalance() throws Exception {
+		String url = PmTest.api + "/1b/take/getpreBalance";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "97"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String getOrderRefundByOrderIdAndOrderItemId() throws IOException {
+		String url = PmTest.api + "/2b/df/order/getOrderRefundByOrderIdAndOrderItemId";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "55934"));
+		formparams.add(new BasicNameValuePair("orderId", "4263797"));
+		formparams.add(new BasicNameValuePair("orderItemId", "4864360"));
+		formparams.add(new BasicNameValuePair("state", "COMPLETED"));
 		return PostUtil.httpPost(url, formparams);
 	}
 	

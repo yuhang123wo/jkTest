@@ -27,60 +27,62 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/product/createDrpProduct";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 104);
+		params.put("prdId", 303);
 		params.put("timestamp", b);
 		CreateProductVo vo = new CreateProductVo();
-		vo.setOriginPrice("50");
+		vo.setOriginPrice("60");
 		vo.setReward("6");
 		vo.setShippingTag(1);
-		vo.setArticleNumber("淘气孩童装&蕾丝旗袍连衣裙");
-		vo.setBrand("淘气孩童装");
+		vo.setArticleNumber("女童迷彩裤");
+		vo.setBrand("棒棒熊");
 		vo.setBatchTag(1);
 		List<String> list = new ArrayList<String>();
 		list.add("/2/2272/20160331/20160331184238715012.jpg");
 		list.add("/2/2272/20160331/20160331184238715012.jpg");
 		vo.setImages(list);
-		vo.setPrice(new BigDecimal("29"));
-		vo.setProductId(1563145L);
+		vo.setPrice(new BigDecimal("31"));
+		vo.setProductId(1487904L);
 		vo.setVideo("http://3e3e.i.ximgs.net/8/470778/2019010920190109212631145.mp4");
-		vo.setSupplierId(400335L);
+		vo.setSupplierId(410729L);
 		vo.setSupplierName("淘气孩童装");
-		vo.setTitle("女童旗袍连衣裙夏装2019新款女孩洋气时髦夏季蕾丝背心裙潮");
+		vo.setTitle("棒棒熊&女童迷彩裤");
 		vo.setWeight(new BigDecimal("1"));
 		List<SkuVo> svs = new ArrayList<SkuVo>();
 		SkuVo ss = new SkuVo();
-		ss.setColor("粉红色");
-		ss.setPrice(new BigDecimal("46"));
-		ss.setBatchPrice(new BigDecimal("45"));
+		ss.setColor("军绿色");
+		ss.setPrice(new BigDecimal("52"));
+		ss.setBatchPrice(new BigDecimal("50.5"));
 		ss.setImage("");
 		ss.setSize("110");
 		ss.setBatchNum(2);
 		SkuVo s2 = new SkuVo();
-		s2.setColor("粉红色");
-		s2.setPrice(new BigDecimal("48"));
-		s2.setBatchPrice(new BigDecimal("46"));
+		s2.setColor("紫色");
+		s2.setPrice(new BigDecimal("51"));
+		s2.setBatchPrice(new BigDecimal("49.6"));
 		s2.setImage("");
-		s2.setSize("120");
+		s2.setSize("110");
 		s2.setBatchNum(2);
 		SkuVo s3 = new SkuVo();
 		s3.setColor("粉红色");
-		s3.setPrice(new BigDecimal("49"));
-		s3.setBatchPrice(new BigDecimal("47"));
+		s3.setPrice(new BigDecimal("50"));
+		s3.setBatchPrice(new BigDecimal("47.8"));
 		s3.setImage("");
-		s3.setSize("130");
+		s3.setSize("110");
 		s3.setBatchNum(3);
+		SkuVo s4 = new SkuVo();
+		s4.setColor("粉红色");
+		s4.setPrice(new BigDecimal("50"));
+		s4.setBatchPrice(new BigDecimal("47.9"));
+		s4.setImage("");
+		s4.setSize("115");
+		s4.setBatchNum(3);
 		svs.add(ss);
 		svs.add(s2);
 		svs.add(s3);
+		svs.add(s4);
 		vo.setSkus(svs);
 		params.put("data", JSON.toJSONString(vo));
-		SignUtil s = new SignUtil();
-		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("prdId", "104"));
-		formparams.add(new BasicNameValuePair("timestamp", b + ""));
-		formparams.add(new BasicNameValuePair("data", JSON.toJSONString(vo)));
-		formparams.add(new BasicNameValuePair("sign", s.sign(params, "UTF-8")));
-		return PostUtil.httpPost(url, formparams);
+		return PostUtil.httpPostPrd(url, params);
 	}
 	
 	
@@ -91,9 +93,10 @@ public class PrdAutoTest {
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("timestamp", b);
-		params.put("pageNo", 7);
+		params.put("pageNo", 1);
 		params.put("pageSize", 100);
-		params.put("prdId", 189);
+		params.put("state", "0");
+		params.put("prdId", 1901);
 		return PostUtil.httpPostPrd(url, params);
 	}
 	
@@ -188,11 +191,11 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/order/saleOrderList";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 231);
-		params.put("orderNo", "T1903076640655");
+		params.put("prdId", 440);
+//		params.put("orderNo", "T1903076640655");
 		params.put("timestamp", b);
 		params.put("pageNo", 1);
-//		params.put("state", "WAITFORSEND");
+//		params.put("state", "COMPLETED");
 		params.put("pageSize", 20);
 //		params.put("isShipping", "1");
 		return PostUtil.httpPostPrd(url, params);
@@ -203,10 +206,10 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/account/transactionList";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 104);
+		params.put("prdId", 303);
 		params.put("timestamp", b);
-		params.put("pageNo", 2);
-//		params.put("type", "TRANSFEROUT");
+		params.put("pageNo", 1);
+//		params.put("type", "REWARDR");
 		params.put("pageSize", 20);
 		return PostUtil.httpPostPrd(url, params);
 	}
@@ -235,30 +238,37 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/customer/customerList";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 104);
+		params.put("prdId", 303);
 		params.put("timestamp", b);
 		params.put("pageNo", 1);
 		params.put("pageSize", 20);
-		params.put("type", 0);
+		params.put("type", 2);
 		return PostUtil.httpPostPrd(url, params);
 	}
 	public static String getDetailCustomer() throws Exception {
 		String url = PrdTest.api + "/drp/customer/getDetailCustomer";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 104);
+		params.put("prdId", 303);
 		params.put("timestamp", b);
-		params.put("customerId", 293);
+		params.put("customerId", 233);
 		return PostUtil.httpPostPrd(url, params);
 	}
-	
+	public static String getPercentage() throws Exception {
+		String url = PrdTest.api + "/drp/percentage/getAllPercentage";
+		long b = new Date().getTime();
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("prdId", 195);
+		params.put("timestamp", b);
+		return PostUtil.httpPostPrd(url, params);
+	}
 	public static String listProfit() throws Exception {
 		String url = PrdTest.api + "/drp/profit/listProfit";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 104);
-		params.put("createTimeBegin", "2019-01-09");
-		params.put("createTimeEnd", "2019-09-09");
+		params.put("prdId", 303);
+//		params.put("createTimeBegin", "2019-01-09");
+//		params.put("createTimeEnd", "2019-09-09");
 		params.put("timestamp", b);
 		return PostUtil.httpPostPrd(url, params);
 	}
@@ -266,7 +276,7 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/rp/getRewardAndProfit";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 104);
+		params.put("prdId", 303);
 		params.put("timestamp", b);
 		return PostUtil.httpPostPrd(url, params);
 	}
@@ -286,8 +296,17 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/order/refundOrder";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("prdId", 440);
+		params.put("orderId", 757);
+		params.put("password", "1234567");
+		params.put("timestamp", b);
+		return PostUtil.httpPostPrd(url, params);
+	}
+	public static String drphotProductList() throws Exception {
+		String url = PrdTest.api + "/drp/product/hotProductList";
+		long b = new Date().getTime();
+		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("prdId", 104);
-		params.put("orderId", 562);
 		params.put("timestamp", b);
 		return PostUtil.httpPostPrd(url, params);
 	}
@@ -296,17 +315,25 @@ public class PrdAutoTest {
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("prdId", 104);
-		params.put("orderId", 561);
+		params.put("orderId", 574);
 		params.put("timestamp", b);
 		return PostUtil.httpPostPrd(url, params);
 	}
-	
+	public static String batchDelProduct() throws Exception {
+		String url = PrdTest.api + "/drp/product/batchDelProduct";
+		long b = new Date().getTime();
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("prdId", 368);
+		params.put("productIds", 148);
+		params.put("timestamp", b);
+		return PostUtil.httpPostPrd(url, params);
+	}
 	
 	public static String listPostage() throws Exception {
 		String url = PrdTest.api + "/drp/postage/listPostage";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 53);
+		params.put("prdId", 303);
 		params.put("timestamp", b);
 		return PostUtil.httpPostPrd(url, params);
 	}
@@ -316,8 +343,8 @@ public class PrdAutoTest {
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("prdId", 104);
-		params.put("page", "page/dfs/x");
-		params.put("scene", "sharetype%3DstoreHome%26prdId%3D231");
+		params.put("page", "pages/register/getUserInfo");
+		params.put("scene", "sharety=co&prdId=104&id=144&pId=1");
 		params.put("timestamp", b);
 		return PostUtil.httpPostPrd(url, params);
 	}
@@ -367,8 +394,8 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/order/completeOrderBatch";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 104);
-		params.put("orderIds", "4259468");
+		params.put("prdId", 368);
+		params.put("orderIds", "4259548");
 		params.put("timestamp", b);
 		return PostUtil.httpPostPrd(url, params);
 	}
@@ -376,8 +403,8 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/profit/getProfit";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 104);
-		params.put("tag",0);
+		params.put("prdId", 303);
+		params.put("tag",2);
 		params.put("timestamp", b);
 		return PostUtil.httpPostPrd(url, params);
 	}
@@ -388,8 +415,8 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/postage/getCanSelectRegion";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 53);
-		params.put("expressId", "1");
+		params.put("prdId", 303);
+		params.put("expressId", "86");
 		params.put("timestamp", b);
 		return PostUtil.httpPostPrd(url, params);
 	}
@@ -410,26 +437,26 @@ public class PrdAutoTest {
 	public static String createOrder() throws Exception {
 		String url = PrdTest.api + "prd/order/createOrder";
 		CreateOrder o = new CreateOrder();
-		o.setPrdId(104);
+		o.setPrdId(368);
 		o.setToken(PrdTest.token);
 		o.setVersion("2.0");
-		o.setAmount(new BigDecimal("171.6"));
-		o.setExpressId(28);
-		o.setExpressName("圆通速递");
+		o.setAmount(new BigDecimal("50"));
+//		o.setExpressId(28);
+//		o.setExpressName("圆通速递");
 		o.setBuyerComments("快点发货啊");
 		o.setCollect(0);
-		o.setFreight(new BigDecimal(30));
-		o.setPrice(new BigDecimal("141.6"));
+		o.setFreight(new BigDecimal(0));
+		o.setPrice(new BigDecimal("50"));
 		o.setReceiverAddressId(71L);
-		o.setShippingTag(0);
+		o.setShippingTag(1);
 		
 		List<Items> list = new ArrayList<Items>();
 		Items item = new Items();
-		item.setNum(3);
+		item.setNum(1);
 //		item.setShoppingCartId(1L);
-		item.setPrice(new BigDecimal("47.2"));
-		item.setProductId(144L);
-		item.setProductSkuId(1483L);
+		item.setPrice(new BigDecimal("50"));
+		item.setProductId(148L);
+		item.setProductSkuId(1613L);
 		list.add(item);
 		o.setItems(list);
 		return PostUtil.httpPostBody(url, JSON.toJSONString(o));
@@ -441,10 +468,10 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/order/createDfOrder";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 104);
+		params.put("prdId", 368);
 		List<DfOrderInfoTT> tt =new ArrayList<DfOrderInfoTT>();
 		DfOrderInfoTT t = new DfOrderInfoTT();
-		t.setOrderId(572L);
+		t.setOrderId(576L);
 		t.setComments("测试测试");
 		t.setExpressId(28L);
 		t.setReceiverName("于航");
@@ -453,11 +480,11 @@ public class PrdAutoTest {
 		t.setRecevierDistrict("城关");
 		t.setRecevierProvince("甘肃");
 		t.setReceiverAddress("甘肃兰州城关hjjjs");
-		t.setServicePrice(new BigDecimal(4.5));
+		t.setServicePrice(new BigDecimal(1.5));
 		t.setChargeInspection(BigDecimal.ZERO);
 		t.setFreight(new BigDecimal(5));
-		t.setPrice(new BigDecimal(87));
-		t.setAmount(new BigDecimal(96.5));
+		t.setPrice(new BigDecimal(31));
+		t.setAmount(new BigDecimal(37.5));
 		tt.add(t);
 		System.out.println(JSON.toJSON(tt));
 		params.put("orders", JSON.toJSON(tt));
@@ -489,9 +516,9 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/pay/orderPay";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 104);
-		params.put("orderIds", "4259468");
-		params.put("amount", "96.5");
+		params.put("prdId", 368);
+		params.put("orderIds", "4259548");
+		params.put("amount", "37.5");
 		params.put("payType", "BALANCE");//BALANCE,ALI
 		params.put("pwd", "123456");
 		params.put("timestamp", b);
@@ -634,7 +661,7 @@ public class PrdAutoTest {
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("prdId", 104);
-		params.put("productId", 19);
+		params.put("productId", 170);
 		params.put("timestamp", b);
 		return PostUtil.httpPostPrd(url, params);
 	}
@@ -836,17 +863,9 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/order/saleOrderTodfDetail";
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("prdId", 104);
-		params.put("orderId", 548);
+		params.put("orderId", 605);
 		params.put("timestamp", String.valueOf(new Date().getTime()));
-		params.put("sign", s.sign(params, "UTF-8"));
-		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		Iterator<Entry<String, Object>> iter = params.entrySet().iterator();
-		while (iter.hasNext()) {
-			Entry<String, Object> entry = iter.next();
-			formparams
-					.add(new BasicNameValuePair(entry.getKey(), String.valueOf(entry.getValue())));
-		}
-		return PostUtil.httpPost(url, formparams);
+		return PostUtil.httpPostPrd(url, params);
 	}
 	
 	public static String getDfOrderDetail() throws Exception {
@@ -907,9 +926,9 @@ public class PrdAutoTest {
 		 
 		String url = PrdTest.api + "/prd/pay/orderPay";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("prdId", "104"));
-		formparams.add(new BasicNameValuePair("orderIds", "572"));
-		formparams.add(new BasicNameValuePair("amount", "171.6"));
+		formparams.add(new BasicNameValuePair("prdId", "368"));
+		formparams.add(new BasicNameValuePair("orderIds", "641"));
+		formparams.add(new BasicNameValuePair("amount", "50"));
 		formparams.add(new BasicNameValuePair("payType", "BALANCE"));
 		formparams.add(new BasicNameValuePair("pwd", "123456"));
 		formparams.add(new BasicNameValuePair("ip", "182.19.9.1"));
@@ -921,12 +940,18 @@ public class PrdAutoTest {
 	public static String xcuCustomerList() throws Exception {
 		String url = PrdTest.api + "/prd/customer/customerList";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-//		formparams.add(new BasicNameValuePair("prdId", "104"));
+		formparams.add(new BasicNameValuePair("prdId", "440"));
 		formparams.add(new BasicNameValuePair("type", "2"));
 		formparams.add(new BasicNameValuePair("token",PrdTest.token));
 		return PostUtil.httpPost(url, formparams);
 	}
-	
+	public static String WxgetAccountInfo() throws Exception {
+		String url = PrdTest.api + "/prd/account/getAccountInfo";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+//		formparams.add(new BasicNameValuePair("prdId", "104"));
+		formparams.add(new BasicNameValuePair("token",PrdTest.token));
+		return PostUtil.httpPost(url, formparams);
+	}
 	public static String hotProductList() throws Exception {
 		String url = PrdTest.api + "/prd/product/hotProductList";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
@@ -975,6 +1000,23 @@ public class PrdAutoTest {
 	}
 	
 	
+	public static String wxwithdrawApply() throws Exception {
+		String url = PrdTest.api + "/prd/account/withdrawApply";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("token",PrdTest.token));
+		formparams.add(new BasicNameValuePair("pwd","xxx"));
+		formparams.add(new BasicNameValuePair("type","1"));
+		formparams.add(new BasicNameValuePair("amount","1"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String getUsPrdList() throws Exception {
+		String url = PrdTest.api + "/prd/account/getUsPrdList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("token",PrdTest.token));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
 	public static String updateAliPay() throws Exception {
 		String url = PrdTest.api + "/prd/account/ali/updateAliPay";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
@@ -988,10 +1030,46 @@ public class PrdAutoTest {
 	public static String wxProductQuery() throws Exception {
 		String url = PrdTest.api + "/prd/product/query";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("prdId", "104"));
+		formparams.add(new BasicNameValuePair("prdId", "303"));
+		formparams.add(new BasicNameValuePair("sortName", "REWARD"));
+		formparams.add(new BasicNameValuePair("size", ""));
+		formparams.add(new BasicNameValuePair("sizeSection", ""));
+		formparams.add(new BasicNameValuePair("minPrice", ""));
+		formparams.add(new BasicNameValuePair("maxPrice", ""));
 		formparams.add(new BasicNameValuePair("token", PrdTest.token));
 		return PostUtil.httpPost(url, formparams);
 	}
+	
+	public static String prdProductQuery() throws Exception {
+		String url = PrdTest.api + "/drp/home/query";
+		Map<String,Object> map = new HashMap<String, Object>();
+		map.put("prdId", "104");
+//		formparams.add(new BasicNameValuePair("sortName", "REWARD"));
+//		map.put("size", "");
+//		map.put("pageNo", "2");
+//		map.put("sizeSection", "1");
+//		map.put("minPrice", "");
+//		map.put("maxPrice", "");
+		map.put("sortName", "PRICE");
+		map.put("timestamp", String.valueOf(new Date().getTime()));
+		return PostUtil.httpPostPrd(url, map);
+	}
+	
+	public static String drplistRewardNews() throws Exception {
+		String url = PrdTest.api + "/drp/home/listRewardNews";
+		Map<String,Object> map = new HashMap<String, Object>();
+		map.put("prdId", "104");
+		map.put("timestamp", String.valueOf(new Date().getTime()));
+		return PostUtil.httpPostPrd(url, map);
+	}
+	public static String getPrdInfoByPrdId() throws Exception {
+		String url = PrdTest.api + "/drp/account/getPrdInfoByPrdId";
+		Map<String,Object> map = new HashMap<String, Object>();
+		map.put("prdId", "104");
+		map.put("timestamp", String.valueOf(new Date().getTime()));
+		return PostUtil.httpPostPrd(url, map);
+	}
+	
 	
 	public static String wxProductdetail() throws Exception {
 		String url = PrdTest.api + "/prd/product/detail";
@@ -1095,6 +1173,7 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/prd/reward/listReward";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("token",PrdTest.token));
+		formparams.add(new BasicNameValuePair("orderId","572"));
 		return PostUtil.httpPost(url, formparams);
 	}
 	public static String listRewardNews() throws Exception {
@@ -1108,6 +1187,7 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/prd/reward/listWaitReward";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("prdId","104"));
+		formparams.add(new BasicNameValuePair("type","0"));
 		formparams.add(new BasicNameValuePair("token",PrdTest.token));
 		return PostUtil.httpPost(url, formparams);
 	}
@@ -1171,8 +1251,8 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/backstage/product/list";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 104);
-//		params.put("shippingTag", 1);
+		params.put("prdId", 1901);
+		params.put("articleNumber", "3208");
 		params.put("timestamp", b);
 		return PostUtil.httpPostBack(url, params);
 	}
@@ -1240,7 +1320,7 @@ public class PrdAutoTest {
 		params.put("pageNo", "1");
 		params.put("pageSize", "100");
 		params.put("timestamp", b);
-		params.put("prdId","104");
+		params.put("prdId","303");
 //		params.put("shopName","1");
 //		params.put("prdName","1");
 //		params.put("recommendName","1");
@@ -1272,4 +1352,14 @@ public class PrdAutoTest {
 		formparams.add(new BasicNameValuePair("sign",  s.signBack(params, "UTF-8")));
 		return PostUtil.httpPost(url, formparams);
 	}
+	
+	public static String productDown() throws Exception {
+		String url = PrdTest.api + "/backstage/product/productDown";
+		long b = new Date().getTime();
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("productId", "1653362");
+		params.put("timestamp", b);
+		return PostUtil.httpPostBack(url, params);
+	}
+	
 }

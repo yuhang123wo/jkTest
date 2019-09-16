@@ -22,13 +22,36 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 public class PostUtil {
+	
+	public static String httpPostWz(String url, List<NameValuePair> formparams) throws IOException {
+		CloseableHttpClient client = HttpClients.createDefault();
+		HttpPost post = new HttpPost(url);
+		UrlEncodedFormEntity uefEntity = new UrlEncodedFormEntity(formparams, "UTF-8");
+		post.setEntity(uefEntity);
+		String response = client.execute(post, new ResponseHandler<String>() {
+			@Override
+			public String handleResponse(HttpResponse response) throws IOException {
+				int status = response.getStatusLine().getStatusCode();
+				if (status >= HttpStatus.SC_OK && status < HttpStatus.SC_MULTIPLE_CHOICES) {
+					HttpEntity entity = response.getEntity();
+					return entity != null ? EntityUtils.toString(entity, "utf-8") : null;
+				} else {
+					System.out.println(response);
+				}
+				System.out.println(status);
+				return null;
+			}
+		});
+		return response;
+	}
+	
 	/**
 	 * 
 	 * @Date 2016年7月27日
 	 * @desc post请求
 	 */
 	public static String httpPost(String url, List<NameValuePair> formparams) throws IOException {
-		formparams.add(new BasicNameValuePair("version", "2.0"));
+//		formparams.add(new BasicNameValuePair("version", "2.0"));
 		CloseableHttpClient client = HttpClients.createDefault();
 		HttpPost post = new HttpPost(url);
 		UrlEncodedFormEntity uefEntity = new UrlEncodedFormEntity(formparams, "UTF-8");

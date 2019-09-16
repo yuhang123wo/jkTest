@@ -210,14 +210,14 @@ public class DsAutoTest {
 	public static String transferPay() throws IOException {
 		String url = DsTest.api + "/trade/transfer/pay";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("userId", "106730"));
-		formparams.add(new BasicNameValuePair("transferId", "203"));
-		formparams.add(new BasicNameValuePair("pwd", "1234567"));
-		formparams.add(new BasicNameValuePair("payType", "ALIPAY"));// BALANCE
+		formparams.add(new BasicNameValuePair("userId", "97"));
+		formparams.add(new BasicNameValuePair("transferId", ""));
+		formparams.add(new BasicNameValuePair("pwd", "123456"));
+		formparams.add(new BasicNameValuePair("payType", "BALANCE"));// BALANCE
 																	// ALIPAY
-		formparams.add(new BasicNameValuePair("fee", "100"));
-		formparams.add(new BasicNameValuePair("fromId", "106730"));
-		formparams.add(new BasicNameValuePair("toId", ""));
+		formparams.add(new BasicNameValuePair("fee", "400"));
+		formparams.add(new BasicNameValuePair("fromId", "97"));
+		formparams.add(new BasicNameValuePair("toId", "55933"));
 		formparams.add(new BasicNameValuePair("comments", "777"));
 		formparams.add(new BasicNameValuePair("rate", "1.2"));
 		// formparams.add(new BasicNameValuePair("orders", "257250"));
@@ -240,7 +240,7 @@ public class DsAutoTest {
 	public static String withdrawApply() throws IOException {
 		String url = DsTest.api + "/trade/withdraw/apply";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("userId", "33"));
+		formparams.add(new BasicNameValuePair("userId", "232107"));
 //		formparams.add(new BasicNameValuePair("amount", "111"));
 		formparams.add(new BasicNameValuePair("pwd", "123456"));
 		return PostUtil.httpPost(url, formparams);
