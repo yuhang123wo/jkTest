@@ -17,4 +17,8 @@ public class TestBaiscType {
 	    g=f;
 	    
 	}
+	
+	public void name() {
+		System.out.println(1);
+	}
 }
