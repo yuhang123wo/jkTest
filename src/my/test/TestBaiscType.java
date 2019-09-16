@@ -25,4 +25,8 @@ public class TestBaiscType {
 	public void tt(){
 		System.out.println(123);
 	}
+	
+	public static void nameg() {
+		System.out.println("sssxx");
+	}
 }
