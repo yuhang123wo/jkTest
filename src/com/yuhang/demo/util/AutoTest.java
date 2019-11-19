@@ -372,24 +372,24 @@ public class AutoTest {
 	public static String order(String api) throws IOException {
 		String url = api + "/2b/order/syncOrders";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		SynVO vo = new SynVO();
-		vo.setUserId(80350);
-		vo.setRepeat(1);
-		List<SynShopOrderVo> list = new ArrayList<SynShopOrderVo>();
-		SynShopOrderVo ss = new SynShopOrderVo();
-		ss.setAti("");
-		ss.setShopId(57408);
-		ss.setEndTime("2019-02-22");
-		ss.setStartTime("2019-02-20");
-		ss.setState(2);
-		list.add(ss);
-		vo.setList(list);
-//		formparams.add(new BasicNameValuePair("shopIds", "8"));//264
-//		formparams.add(new BasicNameValuePair("userId", "40"));//120240 278569
-//		formparams.add(new BasicNameValuePair("startTime", "2018-10-30"));
-//		formparams.add(new BasicNameValuePair("endTime", "2018-10-31"));
-//		formparams.add(new BasicNameValuePair("repeat", "false"));
-		formparams.add(new BasicNameValuePair("json", JSON.toJSONString(vo)));
+//		SynVO vo = new SynVO();
+//		vo.setUserId(55934);
+//		vo.setRepeat(1);
+//		List<SynShopOrderVo> list = new ArrayList<SynShopOrderVo>();
+//		SynShopOrderVo ss = new SynShopOrderVo();
+//		ss.setAti("");
+//		ss.setShopId(93962);
+//		ss.setEndTime("2019-10-31");
+//		ss.setStartTime("2019-10-31");
+//		ss.setState(0);
+//		list.add(ss);
+//		vo.setList(list);
+		formparams.add(new BasicNameValuePair("shopIds", "93962"));//264
+		formparams.add(new BasicNameValuePair("userId", "55934"));//120240 278569
+		formparams.add(new BasicNameValuePair("startTime", "2019-10-31"));
+		formparams.add(new BasicNameValuePair("endTime", "2019-10-31"));
+		formparams.add(new BasicNameValuePair("repeat", "false"));
+//		formparams.add(new BasicNameValuePair("json", JSON.toJSONString(vo)));
 		return PostUtil.httpPost(url, formparams);
 	}
 	

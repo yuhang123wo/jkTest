@@ -5,13 +5,13 @@ public class PrdTest {
 //	 public static String api = "http://127.0.0.1:36061/";
 	//
 	public static String api = "https://prdapi.go2b2b.com/";
-//	public static String api = "https://prdapi.gsb68.com/";
+//	public static String api = "xxhttps://prdapi.gsb68.com/";
 //	public static String token ="4epI970Z6U1+jdhqjmCYxxEjuL743l0a+6sVzbPHe5moWrZyHBqcD6+trFy6sSu/";
 	public static String token ="Vq7uK2vgruMEY9wU6lEo29cOXRaKsckOYMXRC1dI4Op9VSjnI3TRPjwGY30LBaU0";
 
 	public static void main(String[] args) throws Exception {
 //		String result = PrdAutoTest.createDrpProduct();
-//		String result = PrdAutoTest.productList();
+		String result = PrdAutoTest.productList();
 //		String result = PrdAutoTest.prdInfo();
 //		String result = PrdAutoTest.updateProductState();
 //		String result = PrdAutoTest.updateProductInfo();
@@ -130,7 +130,7 @@ public class PrdTest {
 //		String result = PrdAutoTest.listPrd();
 //		String result = PrdAutoTest.setRecommend();
 //		String result = PrdAutoTest.productListBack();
-		String result = PrdAutoTest.cutomerlist();
+//		String result = PrdAutoTest.cutomerlist();
 //		String result = PrdAutoTest.updateProductInfoBack();
 //		String result = PrdAutoTest.productDown();
 		System.out.println(result);

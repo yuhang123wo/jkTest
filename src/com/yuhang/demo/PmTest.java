@@ -24,8 +24,8 @@ public class PmTest {
 //	public static String api = "http://localhost:8087/app-1b";
 //	 public static String api="http://127.0.0.1:8026/";
 	
-	public static String api="http://127.0.0.1:8086/web-service";
-
+	public static String api="http://127.0.0.1:8086/web-service/";
+//	public static String api="http://192.168.1.11:8080";
 	// public static String api="http://api.app.gsb68.com";
 
 	public static void main(String[] args) {
@@ -63,7 +63,7 @@ public class PmTest {
 
 //			 String result = PmAutoTest.orderPay();//订单支付
 			 
-			 
+//			 String result = PmAutoTest.orderPayWap();//WAP支付
 			 
 //			 String result = PmAutoTest.returnOrder();
 			 
@@ -125,13 +125,14 @@ public class PmTest {
 			 
 //			 String result = PmAutoTest.updateRefundRefuse();
 //			String result=PmAutoTest.transactionRelation();
-			String result=PmAutoTest.sellListPlatform();
+//			String result=PmAutoTest.sellListPlatform();
 //			String result=PmAutoTest.updateAppeal();
 //			String result=PmAutoTest.stockOutList();
 //			String result=PmAutoTest.advanceList();
 //			String result=PmAutoTest.appAdvanceList();
 //			String result=PmAutoTest.getSalesTake();
 //			String result=PmAutoTest.getOrderRefundByOrderIdAndOrderItemId();
+//			String result=PmAutoTest.refundDetail();
 //			String result=PmAutoTest.getTakeTracByOrderId();
 //			String result=PmAutoTest.submitAppeal();
 //			String result=PmAutoTest.refundItemList();
@@ -140,14 +141,18 @@ public class PmTest {
 //			String result=PmAutoTest.getTodayStoreIndex();
 //			String result=PmAutoTest.appStoreList();
 //			String result=PmAutoTest.getRefundingReach();
-			 
+//			String result=PmAutoTest.getAppStoreNotice();
 //			String result=PmAutoTest.querySkuByColorSize();
-			
+//			String result=PmAutoTest.viewExpress();
 //			String result=PmAutoTest.getUserByOutId();
 			
 //			String result=PmAutoTest.getpreBalance();
 			
 //			String result=PmAutoTest.getTransferLimit();
+			
+//			String result=PmAutoTest.orderTakePrintCallBack();
+//			String result=PmAutoTest.wapLogin();
+//			String result=PmAutoTest.getIndex();
 			//APP-1B
 //			String result=PmAutoTest.loginApp1b();
 			String token="2fc53230-5c53-42e3-88d2-2e2d3b175a01";
@@ -155,8 +160,27 @@ public class PmTest {
 //			String result=PmAutoTest.index(token);
 //			String result=PmAutoTest.taked(token);
 //			String result=PmAutoTest.orderStockOut(token);
-			//
-			System.out.println(result);
+			
+//			String result=PmAutoTest.querySkuColorSizeByOuterId();
+			//1b-store
+			
+//			String result=PmAutoTest.supplierStoreList();
+			
+//			String result=PmAutoTest.appSupplierStoreList();
+			
+//			String result=PmAutoTest.orderTakePrintCallBackWap();
+//			String result=PmAutoTest.updateStoreOperationBatch();
+//			String result=PmAutoTest.sellListPlatform();
+//			String result=PmAutoTest.appointList();
+//			String result=PmAutoTest.getStoreData();
+//			String result=PmAutoTest.getStoreDataAll();
+//			String result=PmAutoTest.getSupplierAutoStoreSign();
+//			String result=PmAutoTest.setSupplierAutoStoreSign();
+//			String result=PmAutoTest.updateStoreOperation();
+//			String result=PmAutoTest.getAppMsg();
+//			String result=PmAutoTest.getStoreTakeTrace();
+//			String result=PmAutoTest.pOrderList();
+//			System.out.println(result);
 			
 //			upload2(api);
 		} catch (Exception e) {
@@ -184,7 +208,7 @@ public class PmTest {
 	    //multipartEntityBuilder.addBinaryBody("file",file,ContentType.create("application/octet-stream"),"abd.pdf");
 	    multipartEntityBuilder.addBinaryBody("file",file);
 	    //multipartEntityBuilder.addPart("comment", new StringBody("This is comment", ContentType.TEXT_PLAIN));
-	    multipartEntityBuilder.addTextBody("comment", "this is comment");
+	    multipartEntityBuilder.addTextBody("fileType", "4");
 	    HttpEntity httpEntity = multipartEntityBuilder.build();
 	    httpPost.setEntity(httpEntity);
 	         

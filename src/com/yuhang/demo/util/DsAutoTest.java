@@ -1054,7 +1054,7 @@ public class DsAutoTest {
 		String url = DsTest.api + "/gi/queryItemByParams";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 //		formparams.add(new BasicNameValuePair("artNo", "1160251"));
-		 formparams.add(new BasicNameValuePair("artNo", "夏天&S168"));
+		 formparams.add(new BasicNameValuePair("artNo", "岷欣&8095"));
 //		 formparams.add(new BasicNameValuePair("supplierId", "47"));
 //		 formparams.add(new BasicNameValuePair("ids", "1160251"));
 		// formparams.add(new BasicNameValuePair("outPlatform", "6"));
@@ -1645,7 +1645,7 @@ public class DsAutoTest {
 		String url = DsTest.api + "2b/df/order/list";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("userId", "55934"));
-//		formparams.add(new BasicNameValuePair("activityId", "1023920824"));
+		formparams.add(new BasicNameValuePair("orderNo", "1910122490208"));
 //		formparams.add(new BasicNameValuePair("akWaitforsendExp", "1"));
 		return PostUtil.httpPost(url, formparams);
 	}

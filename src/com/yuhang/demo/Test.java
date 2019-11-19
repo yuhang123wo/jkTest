@@ -7,8 +7,8 @@ import com.yuhang.demo.util.AutoTest;
 public class Test {
 
 //	 private static String api="http://192.168.1.11:8086/";
-	 private static String api="http://116.62.199.18:16620/";
-//	private static String api = "http://127.0.0.1:8089/web-service";
+//	 private static String api="http://116.62.199.18:16620/";
+	private static String api = "http://127.0.0.1:8086/web-service";
 //	 public static String api="http://127.0.0.1:8080/";
 //		public static String api = "http://country.go2b2b.com/";
 	 

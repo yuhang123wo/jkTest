@@ -28,10 +28,10 @@ public class DsTest {
 //			 String result = DsAutoTest.transferPay();
 //			 String result = DsAutoTest.transferPayBatch();
 			 
-			 String result = DsAutoTest.withdrawApply();
+//			 String result = DsAutoTest.withdrawApply();
 //			 String result = DsAutoTest.orderPay();
 //			 String result = DsAutoTest.updateOrderState();
-//			 String result =DsAutoTest.withDrawList();
+			 String result =DsAutoTest.withDrawList();
 //			String result = DsAutoTest.factorageGet();
 
 			/*** xxxxxxxxxxxxxxxxxxx *****/

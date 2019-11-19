@@ -95,8 +95,8 @@ public class PrdAutoTest {
 		params.put("timestamp", b);
 		params.put("pageNo", 1);
 		params.put("pageSize", 100);
-		params.put("state", "0");
-		params.put("prdId", 1901);
+		params.put("state", "1");
+		params.put("prdId", 2585);
 		return PostUtil.httpPostPrd(url, params);
 	}
 	

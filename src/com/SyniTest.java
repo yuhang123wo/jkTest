@@ -22,9 +22,12 @@ public class SyniTest {
 	}
 
 	public static void main(String[] args) {
-		SyniTest t = new SyniTest();
-
-		System.out.println(t.method());
+		int a=0;
+		
+		a+=1.5;
+		
+		
+		System.out.println(a);
 	}
 
 }
