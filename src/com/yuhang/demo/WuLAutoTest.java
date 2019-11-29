@@ -23,24 +23,48 @@ public class WuLAutoTest {
 		String url = WuLTest.api + "/consume/buyer/queryProduct";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("pageNo", "1"));
+		formparams.add(new BasicNameValuePair("productId", "12"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String queryDictArea() throws IOException {
+		String url = WuLTest.api + "/consume/buyer/queryDictArea";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("pageNo", "1"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String calcFreight() throws IOException {
+		String url = WuLTest.api + "/consume/buyer/calcFreight";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("expressId", "29"));
+		formparams.add(new BasicNameValuePair("province", "重庆"));
+		formparams.add(new BasicNameValuePair("weight", "0.6"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String listRecvInfo() throws IOException {
+		String url = WuLTest.api + "/consume/buyer/listRecvInfo";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "55934"));
 		return PostUtil.httpPost(url, formparams);
 	}
 
 	public static String createOrder() throws IOException {
 		String url = WuLTest.api + "/consume/buyer/createOrder";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("userId", "55934"));
+		formparams.add(new BasicNameValuePair("userId", "97"));
 		List<ConsumeOrderInfo> list = new ArrayList<ConsumeOrderInfo>();
 
 		ConsumeOrderInfo o = new ConsumeOrderInfo();
 		o.setCollect(0);
-		o.setAmount(new BigDecimal("13.09"));
+		o.setAmount(new BigDecimal("25.29"));
 		o.setComments("1234");
 		o.setDevice(0);
 		o.setExpressId(29);
-		o.setFreight(new BigDecimal("0.99"));
+		o.setFreight(new BigDecimal("2.99"));
 		o.setOrderType(1);
-		o.setPrice(new BigDecimal("12.1"));
+		o.setPrice(new BigDecimal("22.3"));
 		o.setReceiverAddress("123");
 		o.setReceiverAddressId(1L);
 		o.setReceiverCity(4);
@@ -57,61 +81,184 @@ public class WuLAutoTest {
 		item.setQuantity(1);
 		item.setSkuId(1L);
 
+		
+		ConsumeItem item1 = new ConsumeItem();
+		item1.setItemId(1L);
+		item1.setQuantity(1);
+		item1.setSkuId(2L);
+		
 		List<ConsumeItem> items = new ArrayList<ConsumeItem>();
 		items.add(item);
+		items.add(item1);
 		o.setItems(items);
 		list.add(o);
-
 		String json = JSON.toJSONString(list);
+		System.out.println(json);
 		formparams.add(new BasicNameValuePair("json", json));
 		return PostUtil.httpPost(url, formparams);
 	}
 	
 	
-	public static String orderList() throws IOException {
+	public static String orderListVib() throws IOException {
 		String url = WuLTest.api + "/consume/buyer/orderList";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("pageNo", "1"));
+		formparams.add(new BasicNameValuePair("pageSize", "1"));
 		formparams.add(new BasicNameValuePair("userId", "55934"));
 		return PostUtil.httpPost(url, formparams);
 	}
 	
+	
+	
+	public static String orderListDs() throws IOException {
+		String url = WuLTest.api + "/consume/seller/orderList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("pageNo", "1"));
+		formparams.add(new BasicNameValuePair("pageSize", "1"));
+		formparams.add(new BasicNameValuePair("userId", "621482"));
+		return PostUtil.httpPost(url, formparams);
+	}
+//	public static String orderListVib() throws IOException {
+//		String url = WuLTest.api + "/consume/buyer/orderList";
+//		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+//		formparams.add(new BasicNameValuePair("pageNo", "1"));
+//		formparams.add(new BasicNameValuePair("pageSize", "1"));
+//		formparams.add(new BasicNameValuePair("userId", "55934"));
+//		return PostUtil.httpPost(url, formparams);
+//	}
+//	
+	
+	
+	public static String orderDetailVib() throws IOException {
+		String url = WuLTest.api + "/consume/buyer/orderDetail";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("orderId", "6"));
+		formparams.add(new BasicNameValuePair("userId", "55934"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String cancelOrder() throws IOException {
+		String url = WuLTest.api + "/consume/buyer/cancelOrder";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("orderId", "6"));
+		formparams.add(new BasicNameValuePair("userId", "55934"));
+		return PostUtil.httpPost(url, formparams);
+	}
 	
 	public static String orderPay() throws IOException {
 		String url = WuLTest.api + "/pay/consumablesPay";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		ConsumablesPayDto dto = new ConsumablesPayDto();
 		dto.setUserId(55934L);
-		dto.setAmount("13.09");
+		dto.setAmount("25.29");
 		List<Long> orders =new ArrayList<Long>();
-		orders.add(2L);
+		orders.add(13L);
+//		orders.add(12L);
 		dto.setOrders(orders);
 		dto.setPwd("123456");
-		dto.setType("ALIPAY");
-		formparams.add(new BasicNameValuePair("pageNo", "1"));
+		dto.setType("BALANCE");
+		System.out.println(JSON.toJSONString(dto));
 		formparams.add(new BasicNameValuePair("json", JSON.toJSONString(dto)));
 		return PostUtil.httpPost(url, formparams);
 	}
 	
+	
+	public static String waporderPay() throws IOException {
+		String url = WuLTest.api + "/payWap/consumablesPay";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		ConsumablesPayDto dto = new ConsumablesPayDto();
+		dto.setUserId(55934L);
+		dto.setAmount("13.09");
+		List<Long> orders =new ArrayList<Long>();
+//		orders.add(3L);
+		orders.add(8L);
+		dto.setOrders(orders);
+		dto.setPwd("123456");
+		dto.setType("ALIPAY");//BALANCE
+		dto.setReturnUrl("www.ba");
+		dto.setNotifyUrl("ww.baidu.com");
+		System.out.println(JSON.toJSONString(dto));
+		formparams.add(new BasicNameValuePair("json", JSON.toJSONString(dto)));
+		return PostUtil.httpPost(url, formparams);
+	}
 	
 	public static String consumablesRefund() throws IOException {
 		String url = WuLTest.api + "/pay/consumablesRefund";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		ConsumablesRefundDto dto = new ConsumablesRefundDto();
-		dto.setUserId(55934L);
-		dto.setAmount("13.09");
-		List<Long> orders =new ArrayList<Long>();
-		orders.add(2L);
-		dto.setOrderId(1L);
+		dto.setUserId(621482L);
+		dto.setAmount("25.29");
+		dto.setOrderId(13L);
 		dto.setPwd("123456");
 		dto.setType("ALIPAY");
-		formparams.add(new BasicNameValuePair("pageNo", "1"));
+		System.out.println(JSON.toJSONString(dto));
 		formparams.add(new BasicNameValuePair("json", JSON.toJSONString(dto)));
 		return PostUtil.httpPost(url, formparams);
 	}
 	
+	public static String loadDsInfo() throws IOException {
+		String url = WuLTest.api + "/consume/buyer/loadDsInfo";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "55934"));
+		return PostUtil.httpPost(url, formparams);
+	}
 	
+	public static String getOrderStateNum() throws IOException {
+		String url = WuLTest.api + "/consume/buyer/getOrderStateNum";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "55934"));
+		formparams.add(new BasicNameValuePair("state", "0"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String pickUpGoods() throws IOException {
+		String url = WuLTest.api + "/consume/seller/pickUpGoods";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "621482"));
+		formparams.add(new BasicNameValuePair("orderId", "13"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String pmList() throws IOException {
+		String url = WuLTest.api + "/consume/seller/pm/list";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "621482"));
+//		formparams.add(new BasicNameValuePair("orderId", "3"));
+		return PostUtil.httpPost(url, formparams);
+	}
 	
+	public static String deliverGoods() throws IOException {
+		String url = WuLTest.api + "/consume/seller/deliverGoods";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "621482"));
+		formparams.add(new BasicNameValuePair("orderIds", "4"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String updateOrderRemark() throws IOException {
+		String url = WuLTest.api + "/consume/seller/updateOrderRemark";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("remark", "哈哈"));
+		formparams.add(new BasicNameValuePair("orderId", "4"));
+		formparams.add(new BasicNameValuePair("userId", "621482"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String updateExpressInfo() throws IOException {
+		String url = WuLTest.api + "/consume/seller/updateExpressInfo";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "621482"));
+		formparams.add(new BasicNameValuePair("orderId", "4"));
+		formparams.add(new BasicNameValuePair("expressId", "29"));
+		formparams.add(new BasicNameValuePair("expressNo", "402839012842"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String updateSingleOrderStatus() throws IOException {
+		String url = WuLTest.api + "/consume/seller/updateSingleOrderStatus";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "621482"));
+		formparams.add(new BasicNameValuePair("orderId", "4"));
+		return PostUtil.httpPost(url, formparams);
+	}
 	
 	private static String alipayNotify() throws IOException {
 		String url = "http://127.0.0.1:8086/web-service/pay/alipay/notify";
@@ -133,11 +280,11 @@ public class WuLAutoTest {
 		formparams.add(new BasicNameValuePair("notify_id", "451f45b153cdfe0cbe7e63e6aca32adlse"));
 		formparams.add(new BasicNameValuePair("notify_type", "trade_status_sync"));
 		formparams.add(new BasicNameValuePair("payment_type", "1"));
-		formparams.add(new BasicNameValuePair("out_trade_no", "GSB_TEBBV_26152"));
-		formparams.add(new BasicNameValuePair("price", "13.09"));
+		formparams.add(new BasicNameValuePair("out_trade_no", "GSB_TEBBV_26179"));
+		formparams.add(new BasicNameValuePair("price", "25.29"));
 		formparams.add(new BasicNameValuePair("trade_status", "TRADE_SUCCESS"));
-		formparams.add(new BasicNameValuePair("total_fee", "13.09"));
-		formparams.add(new BasicNameValuePair("total_amount", "13.09"));
+		formparams.add(new BasicNameValuePair("total_fee", "25.29"));
+		formparams.add(new BasicNameValuePair("total_amount", "25.29"));
 		formparams.add(new BasicNameValuePair("trade_no", "20190322210010047502763188810"));
 		formparams.add(new BasicNameValuePair("sign_type", "MD5"));
 		formparams.add(new BasicNameValuePair("seller_id", "2088221939210090"));

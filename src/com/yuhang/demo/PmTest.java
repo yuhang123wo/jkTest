@@ -25,6 +25,7 @@ public class PmTest {
 //	 public static String api="http://127.0.0.1:8026/";
 	
 	public static String api="http://127.0.0.1:8086/web-service/";
+//	public static String api = "http://116.62.199.18:16610/";
 //	public static String api="http://192.168.1.11:8080";
 	// public static String api="http://api.app.gsb68.com";
 
@@ -41,7 +42,7 @@ public class PmTest {
 			// String result = PmAutoTest.pwdAdd();
 			// String result = PmAutoTest.pwdEdit();
 			// String result = PmAutoTest.userinfo2b();
-//			 String result = PmAutoTest.createOrder();
+			 String result = PmAutoTest.createOrder();
 			// String result = PmAutoTest.getSupplierByDomain();
 			// String result = PmAutoTest.loadSupplierInfo();
 			// String result = PmAutoTest.offLineDepositApply();
@@ -180,8 +181,19 @@ public class PmTest {
 //			String result=PmAutoTest.getAppMsg();
 //			String result=PmAutoTest.getStoreTakeTrace();
 //			String result=PmAutoTest.pOrderList();
-//			System.out.println(result);
 			
+			
+			
+			
+			
+			
+			//尖货
+//			String result = PmAutoTest.getBestProductSku();
+//			String result = PmAutoTest.updateStockNum();
+//			String result = PmAutoTest.updateNextDayStock();
+//			String result = PmAutoTest.bestStockList();
+//			String result = PmAutoTest.bestDayStockList();
+			System.out.println(result);
 //			upload2(api);
 		} catch (Exception e) {
 			e.printStackTrace();

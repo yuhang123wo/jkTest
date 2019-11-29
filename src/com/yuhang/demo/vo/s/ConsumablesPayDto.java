@@ -8,6 +8,27 @@ public class ConsumablesPayDto {
 	private List<Long> orders;// 订单ID列表
 	private String pwd;
 	private String type;
+	
+	private String notifyUrl;
+	private String returnUrl;
+	
+	
+
+	public String getNotifyUrl() {
+		return notifyUrl;
+	}
+
+	public void setNotifyUrl(String notifyUrl) {
+		this.notifyUrl = notifyUrl;
+	}
+
+	public String getReturnUrl() {
+		return returnUrl;
+	}
+
+	public void setReturnUrl(String returnUrl) {
+		this.returnUrl = returnUrl;
+	}
 
 	public Long getUserId() {
 		return userId;
@@ -24,6 +45,8 @@ public class ConsumablesPayDto {
 	public void setAmount(String amount) {
 		this.amount = amount;
 	}
+
+
 
 	public List<Long> getOrders() {
 		return orders;

@@ -1,5 +1,8 @@
 package com.yuhang.demo.util;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -101,10 +104,16 @@ public class PmAutoTest {
 
 	public static String createOrder() throws IOException {
 		String url = PmTest.api + "/2b/df/order/createOrder";
-//		String json = "[ { \"sourceType\":\"JD\",\"collect\":1,\"remark\": \"订单备注测试\", \"receivers\":{ \"name\": \"杨杰\", \"phone\": \"15828006658\", \"mobile\": \"15922551329\", \"address\": { \"province\": \"重庆\", \"city\": \"重庆\", \"country\": \"渝北区\", \"address\": \"重庆重庆渝北区光电园水星\" } }, \"dsId\": 464671, \"items\": [ { \"supplierId\": 97, \"supplier\": \"D区88号\", \"phone\": \"18523502645\", \"address\": \"国际商贸城3区2楼14街22505号\", \"artNo\": \"创意·雨燕&A13\", \"itemId\": 696570, \"skuId\": 12, \"title\": \"商品title\", \"picUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"price\": 45, \"num\": 2, \"amount\": 90, \"color\": \"白色\", \"size\": \"EUR26\" } ], \"fee\": { \"giftInfo\": [ { \"id\": 1, \"price\": 0.5, \"num\": 1, \"imgUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"remark\": \"后跟帖\" }, { \"id\": 2, \"price\": 1, \"num\": 2, \"imgUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"remark\": \"丝袜\" } ], \"gifts\": 2.5, \"express\": 25, \"inspection\": 0, \"serviceCharge\": 2, \"payment\":3 }, \"expressId\": 1, \"expressName\": \"中通快递\", \"expressNo\": \"中通快递\" } ]";
-		String json = "[ { \"sourceType\":\"JD\",\"collect\":1,\"remark\": \"订单备注测试\", \"receivers\":{ \"name\": \"杨杰\", \"phone\": \"15828006658\", \"mobile\": \"15922551329\", \"address\": { \"province\": \"重庆\", \"city\": \"重庆\", \"country\": \"渝北区\", \"address\": \"重庆重庆渝北区光电园水星\" } }, \"dsId\": 97, \"items\": [ { \"supplierId\": 97, \"supplier\": \"D区88号\", \"phone\": \"18523502645\", \"address\": \"国际商贸城3区2楼14街22505号\", \"artNo\": \"创意·雨燕&A13\", \"itemId\": 696570, \"skuId\": 12, \"title\": \"商品title\", \"picUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"price\": 45, \"num\": 2, \"amount\": 90, \"color\": \"白色\", \"size\": \"EUR26\" },{ \"supplierId\": 97, \"supplier\": \"D区88号\", \"phone\": \"18523502645\", \"address\": \"国际商贸城3区2楼14街22505号\", \"artNo\": \"创意·雨燕&A11\", \"itemId\": 16413437, \"skuId\": 0, \"title\": \"商品title\", \"picUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"price\": 45, \"num\": 2, \"amount\": 90, \"color\": \"白色\", \"size\": \"35\" } ], \"fee\": {\"gifts\": 0.0, \"express\": 25, \"inspection\": 0, \"serviceCharge\": 2, \"payment\":3 }, \"expressId\": 1, \"expressName\": \"中国邮政平邮\", \"expressNo\": \"\" } ]";
+		File f = new File(System.getProperty("user.dir") + System.getProperty("file.separator")+"createOrder.json");
+		StringBuilder sb =new StringBuilder();
+		BufferedReader fr = new BufferedReader(new FileReader(f));
+		String len="";
+		while((len=fr.readLine())!=null){
+			sb.append(len);
+		}
+		fr.close();
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("json", json));
+		formparams.add(new BasicNameValuePair("json", sb.toString()));
 		formparams.add(new BasicNameValuePair("userId", "55934"));
 		formparams.add(new BasicNameValuePair("outPlatform", "1"));
 		return PostUtil.httpPost(url, formparams);
@@ -142,7 +151,7 @@ public class PmAutoTest {
 	public static String queryItemByParams() throws IOException {
 		String url = PmTest.api + "/gi/queryItemByParams";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("artNo", "创意·雨燕"));
+		formparams.add(new BasicNameValuePair("artNo", "GO2精选货源&WY108"));
 		// formparams.add(new BasicNameValuePair("sourcePlace", "1"));
 		// formparams.add(new BasicNameValuePair("outPlatform", "2"));
 		// formparams.add(new BasicNameValuePair("supplierId", "97"));
@@ -1603,6 +1612,44 @@ public class PmAutoTest {
 	}
 	
 	
+	public static String getBestProductSku() throws IOException {
+		String url = PmTest.api + "best/getProductSku";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("productId", "1399905"));
+		return PostUtil.httpPost(url, formparams);
+	}
 	
+	public static String updateStockNum() throws IOException {
+		String url = PmTest.api + "best/updateStockNum";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("productId", "1399905"));
+		formparams.add(new BasicNameValuePair("color", "白色"));
+		formparams.add(new BasicNameValuePair("size", "34"));
+		formparams.add(new BasicNameValuePair("quantity", "-100"));
+		return PostUtil.httpPost(url, formparams);
+	}
 	
+	public static String updateNextDayStock() throws IOException {
+		String url = PmTest.api + "best/updateNextDayStock";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("productId", "1399905"));
+		formparams.add(new BasicNameValuePair("quantity", "2000"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String bestStockList() throws IOException {
+		String url = PmTest.api + "best/bestStockList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("productId", "1399905"));
+		formparams.add(new BasicNameValuePair("quantity", "2000"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String bestDayStockList() throws IOException {
+		String url = PmTest.api + "best/bestDayStockList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("productId", "1399905"));
+		formparams.add(new BasicNameValuePair("quantity", "2000"));
+		return PostUtil.httpPost(url, formparams);
+	}
 }
