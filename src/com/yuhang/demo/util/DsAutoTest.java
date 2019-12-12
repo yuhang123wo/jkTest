@@ -1130,7 +1130,7 @@ public class DsAutoTest {
 	}
 
 	private static String alipayNotify() throws IOException {
-		String url = "http://127.0.0.1:36061/app/alipay/notify";
+		String url = "http://127.0.0.1:8087/app-1b/deal/alipay/notify";
 		// String url =
 		// "http://127.0.0.1:8089/web-service/fruits/pay/alipay/notify";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
@@ -1149,11 +1149,11 @@ public class DsAutoTest {
 		formparams.add(new BasicNameValuePair("notify_id", "451f45b153cdfe0cbe7e63e6aca32adlse"));
 		formparams.add(new BasicNameValuePair("notify_type", "trade_status_sync"));
 		formparams.add(new BasicNameValuePair("payment_type", "1"));
-		formparams.add(new BasicNameValuePair("out_trade_no", "GSBGO2_CX_23278"));
-		formparams.add(new BasicNameValuePair("price", "96.5"));
+		formparams.add(new BasicNameValuePair("out_trade_no", "GSB_TEBBV_26314"));
+		formparams.add(new BasicNameValuePair("price", "27"));
 		formparams.add(new BasicNameValuePair("trade_status", "TRADE_SUCCESS"));
-		formparams.add(new BasicNameValuePair("total_fee", "96.5"));
-		formparams.add(new BasicNameValuePair("total_amount", "96.5"));
+		formparams.add(new BasicNameValuePair("total_fee", "27"));
+		formparams.add(new BasicNameValuePair("total_amount", "27"));
 		formparams.add(new BasicNameValuePair("trade_no", "20190322210010047502763188890"));
 		formparams.add(new BasicNameValuePair("sign_type", "MD5"));
 		formparams.add(new BasicNameValuePair("seller_id", "2088221939210090"));
@@ -1903,12 +1903,12 @@ public class DsAutoTest {
 		String url = DsTest.api + "deal/debitPay";
 		long b =new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("userId", 59722);
-		params.put("amount", "0.01"); 
+		params.put("userId", 320697);
+		params.put("amount", "27"); 
 		params.put("debitType", "BUYSMS"); 
 		params.put("remark", "BUYSMS"); 
-		params.put("targetId", "100001"); 
-		params.put("payType", "ALIPAY");//BALANCE ALIPAY
+		params.put("targetId", "1"); 
+		params.put("payType", "BALANCE");//BALANCE ALIPAY
 		params.put("password", "123456");
 		params.put("notifyUrl", "http://yuhang.free.idcfengye.com/app-1b/deal/alipay/notify");
 		params.put("returnUrl", "http://yuhang.free.idcfengye.com/app-1b/deal/alipay/return");

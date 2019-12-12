@@ -13,8 +13,8 @@
 			"address": "重庆重庆渝北区光电园水星"
 		}
 	},
-	"bestTag": 0,
-	"compensateTag": 0,
+	"bestTag": 1,
+	"compensateTag": 1,
 	"dsId": 464671,
 	"items": [{
 		"supplierId": 605983,
@@ -46,43 +46,13 @@
 		"amount": 276,
 		"color": "巧克力色",
 		"size": "35"
-	},{
-		"supplierId": 605983,
-		"supplier": "D区88号",
-		"phone": "18523502645",
-		"address": "国际商贸城3区2楼14街22505号",
-		"artNo": "GO2精选货源&WY900",
-		"itemId": 1418207,
-		"skuId": 4945770527,
-		"title": "GO2精选货源&WY900",
-		"picUrl": "http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg",
-		"price": 138,
-		"num": 2,
-		"amount": 276,
-		"color": "米白色",
-		"size": "35"
-	},{
-		"supplierId": 97,
-		"supplier": "D区88号",
-		"phone": "18523502645",
-		"address": "国际商贸城3区2楼14街22505号",
-		"artNo": "创意·雨燕&7746",
-		"itemId": 1547792,
-		"skuId": 4945770527,
-		"title": "创意·雨燕&7746",
-		"picUrl": "http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg",
-		"price": 138,
-		"num": 2,
-		"amount": 276,
-		"color": "米白色",
-		"size": "35"
 	}],
 	"fee": {
 		"giftInfo": [],
 		"gifts": 2.5,
 		"express": 25,
 		"inspection": 0,
-		"serviceCharge": 0,
+		"serviceCharge": 2,
 		"payment": 3
 	},
 	"expressId": 29,

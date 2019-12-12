@@ -21,7 +21,7 @@ public class PmTest {
 //	public static String api = "http://116.62.199.18:16620/";
 //	public static String api = "http://yhwo.free.idcfengye.com";
 //	public static String api = "http://192.168.1.11:8080/";
-//	public static String api = "http://localhost:8087/app-1b";
+//	public static String api = "http://localhost:8087/app-1b/";
 //	 public static String api="http://127.0.0.1:8026/";
 	
 	public static String api="http://127.0.0.1:8086/web-service/";
@@ -42,7 +42,7 @@ public class PmTest {
 			// String result = PmAutoTest.pwdAdd();
 			// String result = PmAutoTest.pwdEdit();
 			// String result = PmAutoTest.userinfo2b();
-			 String result = PmAutoTest.createOrder();
+//			 String result = PmAutoTest.createOrder(); //TODO
 			// String result = PmAutoTest.getSupplierByDomain();
 			// String result = PmAutoTest.loadSupplierInfo();
 			// String result = PmAutoTest.offLineDepositApply();
@@ -173,6 +173,9 @@ public class PmTest {
 //			String result=PmAutoTest.updateStoreOperationBatch();
 //			String result=PmAutoTest.sellListPlatform();
 //			String result=PmAutoTest.appointList();
+//			String result=PmAutoTest.prepareList();
+//			String result=PmAutoTest.pmOrderList();
+//			String result=PmAutoTest.takeprintQuery();
 //			String result=PmAutoTest.getStoreData();
 //			String result=PmAutoTest.getStoreDataAll();
 //			String result=PmAutoTest.getSupplierAutoStoreSign();
@@ -180,7 +183,7 @@ public class PmTest {
 //			String result=PmAutoTest.updateStoreOperation();
 //			String result=PmAutoTest.getAppMsg();
 //			String result=PmAutoTest.getStoreTakeTrace();
-//			String result=PmAutoTest.pOrderList();
+			String result=PmAutoTest.pOrderList(); //2b orderList
 			
 			
 			
@@ -189,10 +192,23 @@ public class PmTest {
 			
 			//尖货
 //			String result = PmAutoTest.getBestProductSku();
+//			String result = PmAutoTest.getProductAndSkuByProductIds();
 //			String result = PmAutoTest.updateStockNum();
 //			String result = PmAutoTest.updateNextDayStock();
 //			String result = PmAutoTest.bestStockList();
+//			String result = PmAutoTest.bestStockListByUserId();
 //			String result = PmAutoTest.bestDayStockList();
+//			String result=PmAutoTest.getSendoutOrderTakeData();
+//			String result=PmAutoTest.getCompensateRecord();
+//			String result=PmAutoTest.getCompensateNumBySupplierIds();
+//			String result=PmAutoTest.updateBestState();
+//			String result=PmAutoTest.updateBestStateByUserId();
+//			String result=PmAutoTest.returnMargin();
+//			String result=PmAutoTest.getSendoutReturnRecord();
+//			String result=PmAutoTest.getHasGoodsDay();
+//			String result=PmAutoTest.marginReplenish();
+			
+//			String result=PmAutoTest.getBestProductStatis();
 			System.out.println(result);
 //			upload2(api);
 		} catch (Exception e) {

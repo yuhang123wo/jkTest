@@ -2,6 +2,7 @@ package com.yuhang.demo.util;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -76,6 +77,43 @@ public class PostUtil {
 	public static String httpApp1b(String url, Map<String,Object> params) throws Exception {
 		SignUtil s = new SignUtil();
 		params.put("sign", s.sign(params, "UTF-8"));
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		Iterator<Entry<String, Object>> iter = params.entrySet().iterator();
+		while (iter.hasNext()) {
+			Entry<String, Object> entry = iter.next();
+			formparams
+					.add(new BasicNameValuePair(entry.getKey(), String.valueOf(entry.getValue())));
+		}
+		CloseableHttpClient client = HttpClients.createDefault();
+		HttpPost post = new HttpPost(url);
+		UrlEncodedFormEntity uefEntity = new UrlEncodedFormEntity(formparams, "UTF-8");
+		post.setEntity(uefEntity);
+		String response = client.execute(post, new ResponseHandler<String>() {
+			@Override
+			public String handleResponse(HttpResponse response) throws IOException {
+				int status = response.getStatusLine().getStatusCode();
+				if (status >= HttpStatus.SC_OK && status < HttpStatus.SC_MULTIPLE_CHOICES) {
+					HttpEntity entity = response.getEntity();
+					return entity != null ? EntityUtils.toString(entity, "utf-8") : null;
+				} else {
+					System.out.println(response);
+				}
+				System.out.println(status);
+				return null;
+			}
+		});
+		return response;
+
+	}
+	
+	
+	
+	public static String httpApp(String url, Map<String,Object> params) throws Exception {
+		params.put("timestamp", new Date().getTime());
+		SignUtil s = new SignUtil();
+		params.put("sign", s.sign(params, "UTF-8"));
+		
+//		params.put("x", "1");
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		Iterator<Entry<String, Object>> iter = params.entrySet().iterator();
 		while (iter.hasNext()) {

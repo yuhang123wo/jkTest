@@ -4,14 +4,14 @@ import com.yuhang.demo.util.DsAutoTest;
 
 public class DsTest {
 
-	public static String api = "http://127.0.0.1:8086/web-service/";
+//	public static String api = "http://127.0.0.1:8086/web-service/";
 //	public static String api="http://116.62.199.18:16620/";
 //	public static String api="http://192.168.1.11:8086/";
 //	public static String api="http://127.0.0.1:8080/";
-//	 public static String api = "http://app.go2b2b.com/";	
+	 public static String api = "http://app.go2b2b.com/";	
 //	public static String api = "http://country.go2b2b.com/";
 //	public static String api="http://116.62.199.18:16650/";
-//	public static String api = "http://127.0.0.1:8086/app-1b/";
+//	public static String api = "http://127.0.0.1:8087/app-1b/";
 	public static void main(String[] args) {
 		try {
 //			 String result = DsAutoTest.topay();
@@ -31,7 +31,7 @@ public class DsTest {
 //			 String result = DsAutoTest.withdrawApply();
 //			 String result = DsAutoTest.orderPay();
 //			 String result = DsAutoTest.updateOrderState();
-			 String result =DsAutoTest.withDrawList();
+//			 String result =DsAutoTest.withDrawList();
 //			String result = DsAutoTest.factorageGet();
 
 			/*** xxxxxxxxxxxxxxxxxxx *****/
@@ -240,7 +240,7 @@ public class DsTest {
 //			String result =DsAutoTest.certifyCompleted();
 //			String result =DsAutoTest.appearCertifyRefund();
 //			String result =DsAutoTest.appearCertifyRefundBySupplier();
-//			String result =DsAutoTest.debitPay();
+			String result =DsAutoTest.debitPay();
 			 System.out.println(result);
 			
 //			System.out.println(new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()));
