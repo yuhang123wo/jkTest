@@ -26,7 +26,7 @@ public class PmAutoTest {
 	public static String byOutId() throws IOException {
 		String url = PmTest.api + "/user/byOutId";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("outId", "523025"));
+		formparams.add(new BasicNameValuePair("outId", "443890"));
 		return PostUtil.httpPost(url, formparams);
 	}
 
@@ -119,6 +119,23 @@ public class PmAutoTest {
 		return PostUtil.httpPost(url, formparams);
 	}
 
+	
+	public static String orderUpdate() throws IOException {
+		String url = PmTest.api + "/2b/df/order/orderUpdate";
+		File f = new File(System.getProperty("user.dir") + System.getProperty("file.separator")+"orderUpdate.json");
+		StringBuilder sb =new StringBuilder();
+		BufferedReader fr = new BufferedReader(new FileReader(f));
+		String len="";
+		while((len=fr.readLine())!=null){
+			sb.append(len);
+		}
+		fr.close();
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("json", sb.toString()));
+		formparams.add(new BasicNameValuePair("userId", "55934"));
+		formparams.add(new BasicNameValuePair("outPlatform", "1"));
+		return PostUtil.httpPost(url, formparams);
+	}
 	// String json =
 	// "[ { \"sourceType\":\"JD\",\"collect\":1,\"remark\": \"订单备注测试\", \"receivers\":{ \"name\": \"杨杰\", \"phone\": \"15828006658\", \"mobile\": \"15922551329\", \"address\": { \"province\": \"重庆\", \"city\": \"重庆\", \"country\": \"渝北区\", \"address\": \"重庆重庆渝北区光电园水星\" } }, \"dsId\": 2794, \"items\": [ { \"supplierId\": 197841, \"supplier\": \"D区88号\", \"phone\": \"18523502645\", \"address\": \"国际商贸城3区2楼14街22505号\", \"artNo\": \"创意·雨燕&c205\", \"itemId\": 1, \"skuId\": 12, \"title\": \"商品title\", \"picUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"price\": 1, \"num\": 2, \"amount\": 2, \"color\": \"白色\", \"size\": \"EUR26\" } ], \"fee\": { \"giftInfo\": [ { \"id\": 1, \"price\": 0.5, \"num\": 1, \"imgUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"remark\": \"后跟帖\" }, { \"id\": 2, \"price\": 1, \"num\": 2, \"imgUrl\": \"http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg\", \"remark\": \"丝袜\" } ], \"gifts\": 2.5, \"express\": 25, \"inspection\": 0, \"serviceCharge\": 2, \"payment\":3 }, \"expressId\": 1, \"expressName\": \"中通快递\", \"expressNo\": \"中通快递\" } ]";
 
@@ -308,11 +325,11 @@ public class PmAutoTest {
 		String url = PmTest.api + "/pay/orderPay";
 		OrderPayDto dto = new OrderPayDto();
 		dto.setPwd("123456");
-		dto.setType(PayType.BALANCE);
+		dto.setType(PayType.ALIPAY);
 		dto.setUserId(55934L);
-		dto.setAmount("910.44"); //910.44
+		dto.setAmount("519.5"); //910.44
 		List<Long> list = new ArrayList<Long>();
-		list.add(4265227L);
+		list.add(4265550L);
 		//1195.49
 //		list.add(4265218L);
 		dto.setOrders(list);
@@ -1403,9 +1420,9 @@ public class PmAutoTest {
 		String url = PmTest.api + "/1b/take/getSendoutOrderTakeData";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("supplierId", "97"));
-		formparams.add(new BasicNameValuePair("type", "0"));
-		formparams.add(new BasicNameValuePair("pageSize", "10"));
-		formparams.add(new BasicNameValuePair("bestType", "1"));
+//		formparams.add(new BasicNameValuePair("type", "0"));
+//		formparams.add(new BasicNameValuePair("pageSize", "10"));
+//		formparams.add(new BasicNameValuePair("bestType", "1"));
 		return PostUtil.httpPost(url, formparams);
 	}
 	public static String getCompensateRecord() throws Exception {
@@ -1497,10 +1514,19 @@ public class PmAutoTest {
 		return PostUtil.httpPost(url, formparams);
 	}
 	
+	public static String marginQuery() throws IOException {
+		String url = PmTest.api + "/2b/account/marginQuery";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("userId", "97"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
 	public static String getBestProductStatis() throws IOException {
 		String url = PmTest.api + "/best/getBestProductStatis";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("userId", "97"));
+		formparams.add(new BasicNameValuePair("pageSize", "1"));
 		return PostUtil.httpPost(url, formparams);
 	}
 	
@@ -1531,6 +1557,7 @@ public class PmAutoTest {
 		String url = PmTest.api + "/1b/take/getAppStoreNotice";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("supplierId", "8"));
+		formparams.add(new BasicNameValuePair("bestType", "1"));
 		return PostUtil.httpPost(url, formparams);
 	}
 	
@@ -1558,6 +1585,8 @@ public class PmAutoTest {
 		return PostUtil.httpPost(url, formparams);
 	}
 	
+	
+ 
 	
 	public static String getprXeBalance() throws Exception {
 		String url = PmTest.api + "/1b/take/getpreBalance";
@@ -1753,10 +1782,10 @@ public class PmAutoTest {
 		String url =PmTest.api +  "/2b/df/order/list"; 
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("userId", "55934"));
-		formparams.add(new BasicNameValuePair("pageSize", "1"));
+		formparams.add(new BasicNameValuePair("pageSize", "10"));
 //		formparams.add(new BasicNameValuePair("orderKind", "1"));
-		formparams.add(new BasicNameValuePair("ids", "4265220,4265219"));
-		formparams.add(new BasicNameValuePair("orderNo", "1912116238165"));
+//		formparams.add(new BasicNameValuePair("ids", "4265220,4265219"));
+//		formparams.add(new BasicNameValuePair("orderNo", "1912116238165"));
 		return PostUtil.httpPost(url, formparams);
 	}
 	
@@ -1789,6 +1818,14 @@ public class PmAutoTest {
 		params.put("quantity","34" );
 		return PostUtil.httpApp(url, params);
 	}
+	
+	public static String getProductDetails() throws Exception {
+		String url = PmTest.api + "best/getProductDetails";
+		Map<String,Object> params =new HashMap<String, Object>();
+		params.put("productIds","1803457,1803456,1803448");
+		return PostUtil.httpApp(url, params);
+	}
+	
 	
 	public static String updateNextDayStock() throws Exception {
 		String url = PmTest.api + "best/updateNextDayStock";

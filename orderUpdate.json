@@ -13,9 +13,10 @@
 			"address": "重庆重庆渝北区光电园水星"
 		}
 	},
-	"bestTag": 1,
-	"compensateTag": 1,
-	"dsId": 464671,
+	"id":4265464,
+	"bestTag":1,
+	"compensateTag":1,
+	"dsId":464671,
 	"items": [{
 		"supplierId": 605983,
 		"supplier": "D区88号",
@@ -31,21 +32,21 @@
 		"amount": 350,
 		"color": "白色",
 		"size": "35"
-	} ,{
+	},{
 		"supplierId": 605983,
 		"supplier": "D区88号",
 		"phone": "18523502645",
 		"address": "国际商贸城3区2楼14街22505号",
-		"artNo": "尖货仓&AM3093",
-		"itemId": 1803458,
-		"skuId": 5067872791,
-		"title": "尖货仓&AM3093",
+		"artNo": "尖货仓&AM3006",
+		"itemId": 1802563,
+		"skuId": 5067603480,
+		"title": "尖货仓&AM3006",
 		"picUrl": "http://go2.i.ximgs.net/5/265/20150305/20150305230304603_220.jpg",
-		"price": 155,
-		"num": 1,
-		"amount": 155,
+		"price": 110,
+		"num": 2,
+		"amount": 220,
 		"color": "黑色",
-		"size": "35"
+		"size": "39"
 	}],
 	"fee": {
 		"giftInfo": [],
